@@ -1,0 +1,13 @@
+NAME
+  GOTO -- the GOTO command
+
+DESCRIPTION
+  The GOTO line command branches program execution
+  to the specified line.
+
+SEE ALSO
+  GOSUB
+
+EXAMPLE
+  \> 10 PRINT "Hello world!"
+  \> 20 GOTO 10

@@ -1,0 +1,18 @@
+NAME
+  MKDIR -- the MKDIR command
+
+DESCRIPTION
+  The MKDIR dir$ command will make, or create, the
+  directory dir$ on the default drive (A: is the
+  internal FLASH drive and B: is the micro SD card
+  if present).
+
+SEE ALSO
+  CWD, CHDIR, DRIVE, FILES, NAME, RMDIR.
+
+EXAMPLE
+  \> DRIVE "B:"
+  \> MKDIR "HELP"
+  \> FILES
+  Directory: \
+  HELP                 <DIR>

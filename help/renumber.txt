@@ -1,0 +1,34 @@
+NAME
+  RENUMBER -- the RENUMBER command
+
+SYNOPSIS
+  RENUMBER
+  RENUMBER first
+  RENUMBER first,incr
+  RENUMBER first,incr,start
+
+DESCRIPTION
+  The RENUMBER command will renumber the program
+  currently held in memory including all
+  references to line numbers in commands such as
+  GOTO, GOSUB, ON etc. 
+
+  'first' is the number to be used in the new
+  sequence. Default is 10. 
+
+  'start' is the line number in the old program
+  where renumbering should commence from. The
+  default is the first line of the program.
+
+  This command will first check for errors that
+  may disrupt the renumbering process and it will
+  only change the program in memory if no errors
+  are found. However, it is prudent to save the
+  program before running this command in case
+  there are some errors that are not caught.
+
+EXAMPLES
+  \> RENUMBER
+  \> RENUMBER 100
+  \> RENUMBER 1,1
+  \> RENUMBER 10,20,100

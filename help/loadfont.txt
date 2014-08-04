@@ -1,0 +1,98 @@
+NAME
+  loadfont -- loadable fonts
+
+DESCRIPTION
+  This section describes the format of a font file
+  that can be loaded using the FONT LOAD command. 
+
+  A font file is just a text file containing
+  ordinary characters which are loaded line by
+  line to build the bitmap of each character in
+  the font. Each character can be up to 64 pixels
+  high and 255 pixels wide. Up to 255 characters
+  can be defined in a font. 
+
+  The first non comment line in the file must be
+  the specifications for the font as follows:  
+
+    height, width, start, end 
+
+  Where 'height' and 'width' are the size of each
+  character in pixels, 'start' is the number in
+  the ASCII chart where the first character sits
+  and 'end' is the last character. Each number is
+  separated by a comma. So, for example: 
+
+    16, 11, 48, 57
+
+  means that the font is 16 pixels high and 11
+  pixelswide. The first character is decimal 48
+  (the zero character) and the last is 57 (number
+  nine character). 
+
+  The remainder of the lines specify the bitmap
+  for each character.  
+
+  Each line represents a horizontal row of pixels.
+  A space means the pixel is not illuminated and
+  any other character will turn the pixel on.  If
+  the font is 11 pixels wide there must be 11 
+  characters in the line.  The first line is the
+  top row of pixels in the character, the next is
+  the second and so on.  If the character is 16
+  pixels high there must be 16 lines to define the 
+  character. This repeats until each character is
+  drawn. Using the above example of a font 16x11
+  with 10 characters there must be a total of 160
+  lines with each line 11 characters wide. This is
+  in addition to the specification line at the
+  top. 
+
+  A comment line has an apostrophe (') as the
+  first character and can occur anywhere. A
+  comment line is completely ignored, all other
+  lines are significant. 
+
+  The following example creates two small icons, a
+  smiley face and a frowning face.  Each is 11x11
+  pixels with the first (the smiley face) in the
+  position of the zero character (0) and the
+  frowning face in the position of number one (1).  
+
+  To display a smiley face your program would
+  contain this: 
+
+    40 FONT LOAD "FACES.FNT" AS #6  ' load the
+     font 
+    50 FONT #6                      ' select the
+     font 
+    60 PRINT "0"                    ' print a
+     smiley face 
+
+  The font file would contains this:
+
+    ' example 
+    ' FACES.FNT 
+    11,11,48,49 
+            
+        XXX     
+      XX   XX   
+     XX     XX  
+    XX  X X  XX 
+    X         X 
+    XX X   X XX 
+     X  XXX  X  
+      XX   XX   
+        XXX     
+               
+               
+        XXX     
+      XX   XX   
+     XX     XX  
+    XX  X X  XX 
+    X         X 
+    XX  XXX  XX 
+     X X   X X  
+      XX   XX   
+        XXX     
+               

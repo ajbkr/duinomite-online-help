@@ -1,0 +1,11 @@
+NAME
+  TIMER -- the TIMER function
+
+DESCRIPTION
+  The TIMER function returns the elapsed time in
+  milliseconds (eg 1/1000 of a second) since
+  reset. If not specifically reset this count will
+  wrap around to zero after 49 days. 
+
+  The timer is reset to zero on power up and you
+  can also reset it by using TIMER as a command. 

@@ -1,0 +1,151 @@
+NAME
+  SERIAL -- serial communications
+
+DESCRIPTION
+  Four serial ports are available for asynchronous
+  serial communications. They are labeled COM1:,
+  COM2:, COM3: and COM4: and are opened in a
+  manner similar to opening a file on the micro SD
+  card. After they have been opened they will have
+  an associated file number (like an opened disk
+  file) and you can use any commands that operate
+  with a file number to read and write to/from the
+  serial port. 
+
+  Finally the serial port can be closed using the
+  CLOSE command. 
+
+  The following is an example: 
+
+  10 OPEN "COM1:9600" AS #3 'open serial port
+  20 PRINT #3, "HELLO"      'send hello
+  30 DATA$ = INPUT$(20,#3)  'read up to 20
+   characters
+  40 CLOSE #3
+  50 SETPIN 2,8             'PIN(2) as Tx digital
+   output 
+
+  Pin assignments: 
+
+    COM1:  RX is Arduino.D2 or GPIO.13
+
+           TX is Arduino.D3 or GPIO.14
+
+           RTS is Arduino.D4 or GPIO.15 (if FC is
+           used)
+
+           CTS is Arduino.D5 or GPIO.16 (if FC is
+           used)
+
+    COM2:  RX is Arduino.D6 or GPIO.17
+
+           TX is Arduino.D7 or GPIO.18
+
+    COM3:  RX is UEXT.4
+
+           TX is UEXT.3
+
+    COM4:  RX is RS232.Rx if R2 is mounted also
+           Arduino.D0 or GPIO.11
+
+           TX is RS232.Tx if R3 is mounted also
+           Arduino.D1 or GPIO.12
+
+  When a serial port is opened the pins used by
+  the port are automatically set to input or
+  output as required and the SETPIN and PIN
+  commands are disabled for the pins. When the
+  port is closed (using the CLOSE command) all
+  pins used by the serial port will be set to a
+  not configured state and the SETPIN command can
+  then be used to reconfigure them.
+
+  COM1: and COM2:  are implemented with bit-bang
+  by MMBasic and maximum speed is 19200 bps, COM3:
+  and COM4:  are real UARTs and maximum speed is
+  8,000,000 bps (speed over 115200 bps is not
+  reliable in practice).
+
+  A serial port can be opened with "AS CONSOLE".
+  In this case any data received will be treated
+  the  same as keystrokes received from the
+  keyboard and any characters sent to the video
+  output will also be transmitted via the serial
+  port. This enables the remote control of MMBasic
+  via a serial interface. 
+
+  The signal polarity is standard for devices
+  running at TTL voltages (not RS232). Idle is
+  voltage high, the start bit is voltage low, data
+  uses a high voltage for logic 1 and the stop bit
+  is a high voltage. 
+
+  The flow control pins (RTS and CTS) use a low
+  voltage to signal stop sending data and high as
+  OK to send. The RS232 connector have MAX3232
+  driver which translates the TTL levels to RS232 
+  levels 12V. 
+
+  Reading and Writing 
+
+  Once a serial port has been opened you can use
+  any commands or functions that use a file number
+  to write and read from the port. Generally the
+  PRINT command is the best method for
+  transmitting data and the INPUT$() function is
+  the most convenient way of getting data that has
+  been received. When using the INPUT$() function
+  the number of characters specified will be the
+  maximum number of characters returned but it
+  could be less if there are fewer characters in
+  the receive buffer. In fact the INPUT$()
+  function will immediately return an empty string
+  if there are no characters available in the
+  receive buffer. 
+
+  The LOC() function is also handy, it will return
+  the number of characters waiting in the receive
+  buffer (ie, the number characters that can be
+  retrieved by the INPUT$() function). The EOF()
+  function will return true if there are no
+  characters waiting. 
+
+  The LOF() function will return the space (in
+  characters) remaining in the transmit buffer. 
+
+  When outputting to a serial port (ie, using
+  PRINT #) the command will pause if the output
+  buffer is full and wait until there is 
+  sufficient space to put the new data in the
+  buffer before returning. If the receive buffer
+  overflows with incoming data the serial port 
+  will automatically discard the oldest data to
+  make room for the new data. 
+
+  Serial ports can be closed with the CLOSE
+  command. This will discard any characters still
+  in the buffers, return the buffer memory to the 
+  memory pool and set all pins used by the port to
+  the not configured state. A serial port is also
+  automatically closed when commands such as RUN
+  and NEW are issued. 
+
+  Opening a Serial Port as the Console 
+
+  A serial port can be opened as the console for
+  MMBasic. The command is: OPEN "COMn:..." AS
+  CONSOLE. 
+
+  In this case any characters received from the
+  serial port will be treated the same as
+  keystrokes received from the keyboard and any 
+  characters sent to the video output will also be
+  transmitted via the serial port. This enables a
+  user with a terminal at the end of the serial
+  link to exercise remote control of MMBasic. For
+  example, via a modem. 
+
+  Note that only one serial port can be opened AS
+  CONSOLE at a time and it will remain open until
+  closed using the CLOSE CONSOLE command. It will
+  not be closed by commands such as NEW and RUN. 

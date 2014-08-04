@@ -1,0 +1,17 @@
+NAME
+  KILL -- the KILL command
+
+DESCRIPTION
+  The KILL file$ command will delete the file
+  specified by file$ from the default drive
+  (internal flash a: or micro SD card b:).
+	 
+  Quotation marks are required around a string
+  constant and the extension, if there is one,
+  must be specified. 
+
+SEE ALSO
+  DRIVE, FILES, LOAD, NAME, RUN, SAVE.
+
+EXAMPLE
+  \>KILL "SAMPLE.DAT"

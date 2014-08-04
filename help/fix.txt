@@ -1,0 +1,22 @@
+NAME
+  FIX -- the FIX function
+
+DESCRIPTION
+  The FIX(nbr) function will truncate nbr to a
+  whole number by eliminating the decimal point
+  and all characters to the right of the decimal
+  point.
+
+  The major difference between FIX ans INT is that
+  FIX provides a true integer function (ie does
+  not return the next lower number for negative
+  numbers as INT() does).
+
+  This behaviour is for Microsoft compatibility.  
+
+SEE ALSO
+  CINT, INT
+
+EXAMPLE
+  \> PRINT FIX(-9.1)
+  -9

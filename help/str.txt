@@ -1,0 +1,17 @@
+NAME
+  STR -- the STR function
+
+DESCRIPTION
+  The STR$(nbr) command returns a string in the
+  decimal (base 10) representation of 'nbr'.
+
+SEE ALSO
+  VAL(string$).
+
+EXAMPLE
+  \> 10 INPUT "TYPE A NUMBER: ", N
+  \> 20 PRINT "THIS IS A ";LEN(STR$(N));
+   " DIGIT NUMBER"
+  \> RUN
+  TYPE A NUMBER: 123 
+  THIS IS A 3 DIGIT NUMBER

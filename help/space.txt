@@ -1,0 +1,25 @@
+NAME
+  SPACE -- the SPACE function
+
+DESCRIPTION
+  The SPACE$(nbr) function returns a string of
+  blank spaces 'nbr' bytes long.
+
+  'nbr' is rounded to an integer and must be
+  within the range of 0 to 255. If the number is
+  outside this range error, then the error message
+  "Error: Number out of bounds" results.
+
+EXAMPLE
+  \> 10 FOR N=1 TO 5
+  \> 20 X$=SPACE$(N)
+  \> 30 PRINT X$; N
+  \> 40 NEXT N
+  \> RUN
+   1
+    2
+     3
+      4
+       5
+
+  Line 20 adds one space for each loop execution.

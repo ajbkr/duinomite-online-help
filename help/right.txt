@@ -1,0 +1,22 @@
+NAME
+  RIGHT$ -- the RIGHT$ function
+
+DESCRIPTION
+  The RIGHT$(string$,number-of-chars) function
+  returns a substring of 'string$' with
+  'number-of-chars' from the right (end) of the
+  string. 
+
+  If 'number-of-chars' is equal to or greater than
+  LEN(string$), RIGHT$ returns 'string$'. If
+  'number-of-chars' equals zero, the null string
+  (length zero) is returned.
+
+SEE ALSO
+  INSTR, LEFT$(), MID$.
+
+EXAMPLE
+  \> 10 A$="DISK BASIC"
+  \> 20 PRINT RIGHT$(A$, 5)
+  \> RUN
+  BASIC

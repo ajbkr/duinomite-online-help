@@ -1,0 +1,23 @@
+NAME
+  CINT -- the CINT function
+
+DESCRIPTION
+  The CINT(number) function will round numbers
+  with fractional portions up or down to the next
+  whole number or integer.
+
+  'number' should be in the integer number range.
+
+SEE ALSO
+  INT() and FIX() both of which return integers.
+
+EXAMPLES
+  \> PRINT CINT(45.67)
+  46
+
+  45.67 is rounded up to 46.
+
+  \> PRINT CINT(-35.54)
+  -36
+
+  -35.54 is rounded up to -36.

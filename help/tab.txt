@@ -1,0 +1,28 @@
+NAME
+  TAB -- the TAB function
+
+DESCRIPTION
+  The TAB(nbr) function outputs spaces until the
+  column indicated by 'nbr' has been reached.
+
+  If the current print position is already beyond
+  column  'nbr', TAB goes to that position on the
+  next line.
+
+  Column 1 is the leftmost position. The rightmost
+  position is the screen width. 'nbr' must be
+  within the range of 1 to 255.
+
+  It is as though the TAB function has an implied
+  semicolon after it. TAB may be used only in
+  PRINT and PRINT # statements.
+
+EXAMPLES
+  \> 10 PRINT "HELLO" TAB(3) "WORLD"
+  \> RUN
+  HELLO
+     WORLD
+
+  \> 10 PRINT "HELLO" TAB(10) "WORLD"
+  \> RUN
+  HELLO    WORLD

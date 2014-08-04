@@ -1,0 +1,15 @@
+NAME
+  SIN -- the SIN function
+
+DESCRIPTION
+  The SIN(number) function returns the sine of the
+  argument 'number' in radians. 
+
+  To obtain SIN(x) when x is in degrees, use
+  SIN(x*pi/180).
+
+EXAMPLE
+  \> PRINT SIN(1.5)
+  0.997495
+
+  The sine of 1.5 radians is 0.997495.

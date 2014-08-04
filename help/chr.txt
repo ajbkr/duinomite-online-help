@@ -1,0 +1,28 @@
+NAME
+  CHR -- the CHR function
+
+DESCRIPTION
+  The CHR$(number) function will return a one
+  character string consisting of the character
+  corresponding to the ASCII code indicated by the
+  argument 'number'.
+
+  'number' is a value from 0 to 255.
+
+  CHR$ is commonly used to send a special
+  character to the terminal or printer. For
+  example, you could add CHR$(13) or CHR$(34) to
+  a string.
+
+  See the ASC() function for ASCII-to-numeric conversion.
+
+EXAMPLES
+  \> PRINT CHR$(66);
+  B
+
+  This prints the ASCII character code 66 which is
+  the uppercase letter B.
+
+  \> PRINT CHR$(13);
+
+  This prints a carriage return.

@@ -1,0 +1,60 @@
+NAME
+  EDIT -- the EDIT command
+
+DESCRIPTION
+  EDIT [Line number] EDIT the line number.
+
+  If no line number is used this command will edit
+  the previous entry typed at the command prompt.
+  If a running program has just terminated with an
+  error this will automatically edit the line that
+  caused the error.
+
+  The Editing keys are:
+
+  Left/right Arrows      Move the cursor within
+                         the line
+  Home/End               Move the cursor to the
+                         start/end of the line
+  Delete                 Delete the character
+                         under the cursor
+  Backspace              Delete the character
+                         before the cursor
+  Insert                 Switch between insert and
+                         overtype mode
+
+  Use Enter (or Return) to finish editing (even in
+  insert mode). 
+
+  The line is added to the program just as if it
+  had been typed at the command prompt. If the
+  line number has been changed a new (edited) copy
+  of the line will be added to memory, if it is 
+  unchanged the line will replace 'line-number'.
+  When editing a program line the up arrow will
+  switch to the previous line and down arrow to
+  the next line number. When doing this any
+  changes will be automatically saved (the same as
+  using Enter) before moving to the next line.
+
+  MMBasic is always in edit mode when entering
+  data at the command prompt or for the INPUT and
+  LINE INPUT commands. In these cases the arrow
+  keys can be used to move within the line to
+  correct errors. If the Up arrow key is pressed
+  at the command prompt it will act the same as
+  EDIT with no line number (edit the last error
+  line or entered command). Subsequent up/down
+  arrow presses will move through the list of
+  recent entries. All the editing keys work with
+  Tera term and Putty(in vt100 mode) so editing
+  can be accomplished over a USB or serial link
+  using these terminal emulators or any other
+  vt100 compatible terminal emulator. The maximum
+  line length that can be edited is 79 chars in
+  VGA mode and 49 chars in composite mode. If more
+  than this number of characters is entered in
+  overtype mode MMBasic will automatically enter
+  normal text entry mode without the editing
+  functions. If in insert mode any extra
+  characters will be rejected.

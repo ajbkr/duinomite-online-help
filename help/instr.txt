@@ -1,0 +1,48 @@
+NAME
+  INSTR -- the INSTR function
+
+SYNOPSIS
+  INSTR([start-position,] string-searched$,
+   string-pattern$)
+
+DESCRIPTION
+  INSTR returns the position at which
+  string-pattern$ occurs in string-searched$,
+  beginning at the start position.
+
+  The optional offset [start-position] sets the
+  position for starting the search. The default
+  value for [start-position] is 1. If
+  [start-position] equals zero, the error
+  "Number out of bounds" is returned.
+  [start-position] must be in the range 1 to 255.
+  If [start-position] is out of this range, a
+  "Number out of bounds" error is returned.
+
+RETURN VALUES
+  INSTR returns 0 if:
+    - [start-position] > LEN(string-searched$)
+    - [string-searched] is null
+    - [string-pattern$] cannot be found
+
+  If [string-pattern$] is "", INSTR returns
+  [start-position].
+
+  [string-searched$] and [string-pattern$] may be
+  string variables, string expressions, or string
+  literals.
+
+EXAMPLE
+  \> 10 X$="ABCDEBXYZ"
+  \> 20 Y$="B"
+  \> 30 PRINT INSTR(X$, Y$); INSTR(4, X$, Y$)
+  \> RUN
+  2 6
+
+  The interpreter searches the string "ABCDFBXYZ"
+  and finds the first occurrence of the character
+  B at position 2 in the string. It then starts
+  another search at position 4 (D) and finds the 
+  second match at position 6 (B). The last three
+  characters are ignored, since all conditions set
+  out in line 30 were satisfied.

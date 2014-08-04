@@ -1,0 +1,35 @@
+NAME
+  POKE -- the POKE command
+
+DESCRIPTION
+  The POKE hiword, loword, val command will set a
+  byte within the PIC32 virtual memory space to
+  'val'. "hiword" is the top 16 bits of the
+  address while "loword" is the bottom 16 bits.
+
+  THIS COMMAND IS FOR EXPERT USERS ONLY
+
+  The PIC32 maps all control registers, flash
+  (program) memory and volatile (RAM) memory into
+  a single address space so there is no need for
+  INP or OUT commands. The PIC32MX5XX/6XX/7XX
+  family data sheet lists the details of this
+  address space while the source code will provide
+  the symbolic names used in the firmware and
+  Maximite.map file (produced after a successful
+  compile) will list addresses of these symbols.
+  These addresses will change with each version of
+  the firmware so programs should use the
+  predefined variable MM.VER to determine the
+  currently running MMBasic version.
+
+  WARNING: If you use this facility to access an
+  invalid memory address the MIPS CPU will throw
+  an exception which causes the processor to reset
+  and clear all memory. to see this effect try
+  POKE 100,1000,100. To completely reset the CPU
+  after the above POKE, you will need to cycle the
+  power.
+
+SEE ALSO
+  PEEK.

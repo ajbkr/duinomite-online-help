@@ -1,0 +1,18 @@
+NAME
+  CLOSE -- the CLOSE command
+
+DESCRIPTION
+  The CLOSE command has the syntax
+  CLOSE [#]nbr[,[#]nbr]
+
+  The close command will close the file(s) or
+  serial port(s) previously opened with the file
+  number 'nbr'. The [#] is optional.
+
+SEE ALSO
+  OPEN, INPUT
+
+EXAMPLE
+  \> 10 OPEN "OUT1.TXT" FOR output AS #1
+  \> 20 PRINT#1,"Testing..., Testing..."
+  \> 30 CLOSE#1

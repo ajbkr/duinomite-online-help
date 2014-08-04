@@ -1,0 +1,18 @@
+NAME
+  LEN -- the LEN function
+
+DESCRIPTION
+  The LEN$(string$) function will return the
+  number of characters in 'string$'.
+
+  Any non-printing characters and blanks are
+  counted.
+
+EXAMPLE
+  \> 10 X$="PORTLAND, OREGON"
+  \> 20 PRINT LEN(X$)
+  \> RUN
+  16
+
+  Note that the comma and space are included in
+  the character count of 16.

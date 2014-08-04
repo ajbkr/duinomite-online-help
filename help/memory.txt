@@ -1,0 +1,17 @@
+NAME
+  MEMORY -- the MEMORY command
+
+DESCRIPTION
+  The MEMORY command will list the amount of
+  memory currently in use.
+
+  Program memory is cleared by the NEW command.
+  Variable, array and string memory is cleared by
+  many commands (eg NEW, RUN, LOAD, etc) as well
+  as CLEAR and ERASE. 
+
+EXAMPLE
+  \> MEMORY
+  5kB (17%) Program memory used
+  3kB (16%) Variable memory used
+  2kB (30%) Array and string memory used

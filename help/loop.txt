@@ -1,0 +1,55 @@
+NAME
+  LOOP -- the DO ... LOOP, DO ... LOOP WHILE,
+   and DO ... LOOP UNTIL commands
+
+DESCRIPTION
+  The DO ... LOOP Command
+
+  This structure will loop forever or until an
+  EXIT command terminates the loop or control is
+  explicitly transferred outside of the loop with
+  commands like GOTO and RETURN. 
+
+  Note: The DO keyword must be on a line by
+  itself.
+
+  The DO ... LOOP WHILE Command
+
+  The DO WHILE LOOP command loops while the
+  conditions are true. The conditonss must be
+  numeric expressions. If they evaluate to zero
+  they are treated as false; non-zero is treated
+  as true.
+
+  Note: The DO keyword must be on a line by
+  itself.
+
+  (This is equivalent to the deprecated
+  WHILE ... WEND loop, also implemented in
+  MMBasic.)
+
+  The DO ... LOOP UNTIL Command
+
+  The DO ... LOOP UNTIL command will loop until
+  the conditional expression following the UNTIL
+  is true.
+
+  Note: The DO keyword must be on a line by
+  itself.
+
+EXAMPLES
+  \> 10 DO
+  \> 20 PRINT "Hello world" 
+  \> 30 I = I + 1
+  \> 40 IF I >= 4 THEN END
+  \> 50 LOOP
+
+  \> 10 DO
+  \> 20 I = I + 1
+  \> 30 PRINT I
+  \> 40 LOOP WHILE I < 5
+
+  \> 10 DO
+  \> 20 I = I + 1
+  \> 30 PRINT I
+  \> 40 LOOP UNTIL I = 5

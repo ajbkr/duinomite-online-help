@@ -1,0 +1,50 @@
+NAME
+  SETPIN -- the SETPIN command
+
+DESCRIPTION
+  The SETPIN pin,cfg command will configure the
+  external I/O 'pin' according to 'cfg'.
+
+    0 Not configured or inactive
+    1 Analog Input (pins 1 to 10)
+    2 Digital Input (all pins and 5V tolerant on
+     pins 11 to 20)
+    3 Frequency Input (pins 11 to 14)
+    4 Period Input (pins 11 to 14)
+    5 Counting input (pins 11 to 14)
+    6 Interrupt on low to high change (all pins)
+    7 Interrupt on high to low change (all pins)
+    8 Digital Output (all pins)
+    9 Open collector digital output to 5v (pins 11
+     to 20)
+
+  See the function PIN() for reading inputs and
+  the statement PIN()= for outputs. See the
+  command below if an interrupt is configured.
+
+  SETPIN pin,cfg,line will configure 'pin' to
+  generate an interrupt according to 'cfg' and
+  execute an interrupt routine starting at 'line'.
+
+    0 Not configured or inactive"
+    6 Interrupt on low to high input change   (all
+     pins)
+    7 Interrupt on high to low input change   (all
+     pins)
+
+  The starting line number of the interrupt
+  routine is specified in the third parameter
+  'line'. This mode also configures the pin as a
+  digital input so the value of the pin can always
+  be retrieved using the function PIN().
+
+SEE ALSO
+  IRETURN (to return from the interrupt).
+
+EXAMPLE
+  \> 10 SETPIN 1,6,40 'interrupt pin 1 on lo->hi,
+   ISR line 40
+  \> 20 PRINT c
+  \> 30 GOTO 20
+  \> 40 c = c + 1
+  \> 50 IRETURN

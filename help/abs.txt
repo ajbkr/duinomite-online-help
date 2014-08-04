@@ -1,0 +1,12 @@
+NAME
+  ABS -- the ABS function
+
+DESCRIPTION
+  The ABS(number) function will return the
+  absolute value of the argument 'number' (ie: any
+  negative sign is removed and the positive number
+  is returned.)
+
+EXAMPLE
+  \> PRINT ABS(7*(-5))
+  35

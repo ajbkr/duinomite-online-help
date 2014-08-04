@@ -1,0 +1,22 @@
+NAME
+  OCT -- the OCT function
+
+DESCRIPTION
+  The OCT(number) function will return a string
+  giving the octal (base 8) representation of
+  'number'.
+
+  'number' is rounded to an integer before
+  OCT$(number) is evaluated. OCT$ converts decimal
+  values within the range of ±1677100 to an octal
+  string expression.
+
+  Octal numbers are numbers in base 8 rather than
+  base 10 (decimal numbers).
+
+SEE ALSO
+  HEX$().
+
+EXAMPLE
+  \> PRINT OCT$(18)
+  22

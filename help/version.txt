@@ -1,0 +1,26 @@
+	Changes to V1.5
+
+	setpin for freq and period on pins 5 6 7 works .
+	pin(21) returns battery voltage
+
+	turn off trace on NEW
+	
+	TRON SERIAL will put trace info on serial/usb and not video
+
+	screen saver added to setup 5 - 60 minutes in 5 minute increments
+	PRINT MM.BLANK so you can check how much time till screen blank 
+	in seconds you can also do MM.BLANK 0 to blank the screen or MM.BLANK 
+	200 to add 200 seconds to timeout
+
+	sleep minute // Sleep for 1 minute from current time date
+	sleep Hour // Sleep for 1 hour from current time date
+	sleep day // Sleep for 1 day from current time date
+	sleep week // Sleep for 1 week from current time date
+	sleep month// Sleep for 1 month from current time date
+	sleep year // Sleep for 1 year from current time date
+
+	after it wakes check MM.SLEEP
+	1 = Sleep completed
+	2 = pin 7 ext Interrupt
+	4 = BUT Interrupt
+	8 = PS/2 Interrupt

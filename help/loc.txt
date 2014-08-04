@@ -1,0 +1,30 @@
+NAME
+  LOC -- the LOC function
+
+DESCRIPTION
+  The LOC([#]nbr) function will return the number
+  of bytes waiting in the receive buffer of a
+  serial port (ie: COM1: or COM:2) that has been
+  opened as #nbr.
+
+  The # is optional.
+
+  'nbr' is the file number used when the serial
+  port was opened. When transmitting or receiving
+  a file through a communication port, LOC returns
+  the number of characters in the input buffer
+  waiting to be read. The default size for the
+  input buffer is 127 characters. 
+
+  If there are more than 127 characters received
+  only the last 127 remain in the buffer, LOC
+  returns 127. 
+
+  If fewer than 127 characters remain in the
+  buffer, then LOC returns the actual count.
+
+EXAMPLE
+  \> 20 IF LOC(#1) = 5 THEN 300
+
+  The program branches to line 300 after 5
+  characters are read.

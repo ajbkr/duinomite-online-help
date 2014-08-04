@@ -1,0 +1,30 @@
+NAME
+  RUN -- the RUN command
+
+DESCRIPTION
+  The RUN [line|file$] command will execute the
+  program in memory. If a line number is supplied,
+  then excucution begins at that line. Or, if a
+  filename (file$) in quotation marks is supplied,
+  the current program will be erased and that
+  program will be loaded from the default drive
+  and executed. This enables one program to load
+  and run another.
+
+  If an extension is not specified, '.BAS' will be
+  appended to the filename. You can also omit the
+  trailing quotation mark.
+
+  Note: You cannot specify a line number AND a
+  filename.
+
+SEE ALSO
+  LOAD.
+
+EXAMPLE
+  \> RUN 20
+  \> RUN
+  \> RUN "TEST.BAS"
+  \> RUN "TEST.BAS
+  \> RUN "TEST"
+  \> RUN "TEST

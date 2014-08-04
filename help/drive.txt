@@ -1,0 +1,22 @@
+NAME
+  DRIVE -- the DRIVE command
+
+DESCRIPTION
+  The DRIVE string$ command changes the default
+  drive to string$. A: is the internal FLASH drive
+  and B: is the micro SD card (if present).
+
+SEE ALSO
+  CWD, CHDIR, FILES, KILL, LOAD, MKDIR, NAME,
+  RMDIR, SAVE
+
+EXAMPLE
+  \> DRIVE "A:"
+  \> FILES
+  0 files, 260864 bytes free
+
+  \> DRIVE "B:"
+  \> FILES
+  Directory: \
+  MORTGAGE.BAS          1381
+  TEST.BAS               133

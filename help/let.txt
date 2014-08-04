@@ -1,0 +1,20 @@
+NAME
+  LET -- the LET command
+
+DESCRIPTION
+  The LET variable= expression command assigns the
+  value of 'expression' to the variable.
+
+  LET is automatically assumed if a statement does
+  not start with a command.
+
+EXAMPLES
+  \> 10 LET A=10
+  \> 20 PRINT A
+  \> RUN
+  10
+
+  \> 10 A=10
+  \> 20 PRINT A
+  \> RUN
+  10

@@ -1,0 +1,13 @@
+NAME
+  PAUSE -- the PAUSE command
+
+DESCRIPTION
+  The PAUSE nbr command will halt execution of the
+  running program for "nbr" milliseconds. The
+  maximum value of 'nbr' is 4294967295 (about 49
+  days).
+
+EXAMPLE
+  \> 10 PRINT "Start wait"
+  \> 20 PAUSE 2000
+  \> 30 PRINT "Stop wait"

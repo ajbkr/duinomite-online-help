@@ -1,0 +1,15 @@
+NAME
+  SGN -- the SGN function
+
+DESCRIPTION
+  The SGN(nbr) function returns the sign of 'nbr'.
+  When 'nbr' is < 0, -1 is returned; when 'nbr'
+  is = 0, 0 is returned; when 'nbr' is > 0, 1 is
+  returned.
+
+EXAMPLE
+  \> 10 INPUT "Enter value", x
+  \> 20 ON SGN(X)+2 GOTO 100, 200, 300
+
+  MMBasic branches to 100 if X is negative, 200 if
+  X is 0, and 300 if X is positive.

@@ -1,0 +1,17 @@
+NAME
+  PIXEL -- the PIXEL function
+
+DESCRIPTION
+  The PIXEL(x,y) function returns the value of a
+  pixel on the VGA or composite screen. Zero is
+  off, 1 is on. 
+
+EXAMPLE
+  \> 10 FOR x = 1 to 20 STEP 2
+  \> 20 PIXEL(x,1) = 1
+  \> 30 NEXT x
+  \> 40 FOR x = 1 to 20
+  \> 50 PRINT PIXEL(x,1);
+  \> 60 NEXT x
+  \> RUN
+  1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0

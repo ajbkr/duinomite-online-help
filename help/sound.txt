@@ -1,0 +1,32 @@
+NAME
+  SOUND -- the SOUND command
+
+SYNOPSIS
+  SOUND freq,dur
+  SOUND freq,dur,duty
+
+DESCRIPTION
+  The SOUND command will generate a single tone of
+  'freq' (between 20Hz to 1MHz) for 'dur'
+  milliseconds. The sound is played in the
+  background and does not stop program execution.
+
+  If 'dur' is zero any active SOUND statement is
+  turned off. If no SOUND statement is running, a
+  'dur' of zero has no effect. 
+
+  'duty' is the optional duty cycle of the
+  waveform in percent. If it is close to zero the
+  output will be a narrow positive pulse. If it is
+  not specified the duty cycle will default to
+  50%. Setting the duty cycle allows the sound
+  output to be used as a Pulse Width Modulation
+  (PWM) output for driving analog circuits.
+
+  The signal will be avaliable at the sound
+  connector and the voltage divider on this output
+  should be removed so the full signal level is
+  available. The frequency of the output is locked
+  to the PIC32 crystal and is very accurate and
+  for frequencies below 100KHz the duty cycle will
+  be accurate to 0.1%.

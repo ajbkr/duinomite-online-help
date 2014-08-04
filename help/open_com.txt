@@ -1,0 +1,57 @@
+NAME
+  OPEN -- the OPEN [comspec] command
+
+SYNOPSIS
+  OPEN "COMn:[speed][,buf,FC][,OC]" AS [#]fnbr
+
+DESCRIPTION
+  n is the serial port number (1 to 4);
+
+  baud is the speed (75, 150, 300, 600, 1200,
+  2400, 4800, 9600, 19200) The default is 1200 baud;
+
+  buf is the communications buffer size in bytes.
+  The default is 128.
+
+  FC enables hardware flow control on COM1:.
+
+  This command opens a serial port for reading and
+  writing. There are 4 serial ports. COM1: and
+  COM2: are bit-banged in software and are
+  therefore limited to a top speed of 19200 bps,
+  while COM3: and COM4: are implemented in
+  hardware with a reliable top speed of 115200
+  bps.
+
+  COM1: uses GPIO pin 13 for receive data, GPIO
+  pin 14 for transmit data and if flow control is
+  specified GPIO pin 15 for RTS and GPIO pin 16
+  for CTS.
+
+  COM2: uses GPIO pin 17 for recieve data, GPIO
+  pin 18 for transmit data
+
+  COM3: uses UEXT pin 4 for recieve data, UEXT pin
+  3 for transmit data
+
+  COM4: uses GPIO pin 11 for recieve data, GPIO
+  pin 12 for transmit data
+
+  If the port is opened using 'fnbr' the port can
+  be written to and read from using any commands
+  or functions that use a file number.
+
+  OPEN "COMn:[speed][,buf,FC][,OC]" AS CONSOLE
+
+  A serial port can be opened with 'AS CONSOLE'.
+  In this case any data recieved will be treated
+  the same as keystrokes recieved from the
+  keyboard and any characters sent to the video
+  output will also be transmitted via the serial
+  port. This enables the remote control of MMBasic
+  via a serial interface.
+
+EXAMPLES
+  OPEN "COM1:" AS 1
+  OPEN "COM1:2400" AS #2
+  OPEN "COM1:2400" AS CONSOLE

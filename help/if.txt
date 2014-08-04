@@ -1,0 +1,47 @@
+NAME
+  IF -- the IF command
+
+DESCRIPTION
+  The IF expr THEN statement or IF expr THEN
+  statement ELSE statement, evaulates the "expr"
+  and performs the THEN statement if it is true or
+  skips to the next line if false.
+
+  The optional ELSE statement is the reverse of
+  the THEN test. The 'statement' can be just a
+  line number and in that case a GOTO is assumed.
+  For Microsoft BASIC compatability the THEN
+  "statement" construct can be also replaced with
+  a "GOTO" line number.
+
+  This type of IF statement is all on one line.
+
+  The IF expression THEN
+  <statement>
+  [ELSE
+  <statements>]
+  [ELSEIF expression THEN
+  <statements>]
+  ENDIF
+
+  Multiline IF statement with optional ELSE and
+  ELSEIF cases and ending with ENDIF. Each
+  component is on a seperate line.
+  The IF evaluates "expression" and performs the
+  statement(s) following THEN if the "expression"
+  is true or optionally the statement(s) following
+  the ELSE statements as required.
+
+  The ELSE statement
+
+  The ELSE statement introduces a default
+  condition in a multiline IF statement.
+
+  The ELSEIF expression THEN statement
+
+  Introduces a secondary condition in a multiline
+  IF statement.
+
+  The ENDIF statement
+
+  Terminates a multiline IF statement.

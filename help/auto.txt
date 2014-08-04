@@ -1,0 +1,44 @@
+NAME
+  AUTO -- the Auto command
+
+SYNOPSIS
+  There are three ways to use the 'auto' command.
+
+  AUTO
+  AUTO startline
+  AUTO startline,increment
+
+DESCRIPTION
+  AUTO enters automatic line entry mode.
+  'startline' is the line number to start
+  numbering at. 'increment' is the increment for
+  each new line.
+
+  Both are optional and default to 10 if the
+  command has not previously been used or the
+  state of the last used AUTO command when it was
+  terminated.
+
+  When in automatic line entry mode the next line
+  number will be automatically generated and the
+  cursor placed after it ready for a program line
+  to be entered. When ENTER is pressed the line
+  will be saved to memory and the next number
+  generated.
+
+  If the line number is the same as an existing
+  line in memory it will be preceded by an
+  asterisk(*). In this case pressing ENTER without
+  entering any text will preserve the line in
+  memory and generate the next number.
+
+EXAMPLE
+  \> AUTO 10,10
+  \> 10
+  \> 20
+  etc
+
+  \> AUTO 10,1
+  \> 10
+  \> 11
+  etc

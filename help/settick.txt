@@ -1,0 +1,17 @@
+NAME
+  SETTICK -- the SETTICK command
+
+DESCRIPTION
+  The SETTICK period,line command sets up a
+  periodic interrupt (or tick). The time between
+  interrupts is 'period' milliseconds and 'line'
+  is the line number of the interrupt routine. The
+  period can range from 1 to 4294967295 mSec
+  (about 49 days). The interrupt can be disabled
+  by setting 'line' to zero (ie: SETTICK 0,0).
+
+EXAMPLE
+  \> 10 SETTICK 500,80
+  \> ...
+  \> 80 'Empty interrupt routine, just returns
+  \> 90 IRETURN

@@ -1,0 +1,18 @@
+NAME
+  SQR -- the SQR function
+
+DESCRIPTION
+  The SQR(nbr) function returns the square root of
+  the argument 'nbr'.
+
+  'nbr' must be greater than or equal to 0.
+
+EXAMPLE
+  \> 10 FOR X=10 TO 25 STEP 5
+  \> 20 PRINT X; SQR(X)
+  \> 30 NEXT
+  \> RUN
+  10 3.16228
+  15 3.87298
+  20 4.47214
+  25 5

@@ -1,0 +1,17 @@
+NAME
+  POS -- the POS function
+
+DESCRIPTION
+  The POS function will return the current cursor
+  position in a line.
+
+EXAMPLE
+  \> 10 CLS
+  \> 20 A$ = INKEY$ : IF A$ = "" THEN GOTO 30 ELSE
+   PRINT A$;
+  \> 30 IF POS > 10 THEN PRINT CHR$(13);CHR$(10);
+  \> 40 GOTO 20
+
+  Causes a carriage return and line feed after the
+  10th character is printed on each line of the
+  screen.

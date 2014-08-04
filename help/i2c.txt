@@ -1,0 +1,305 @@
+NAME
+  I2C -- I2C communication
+
+  The Inter Integrated Circuit (I2C) bus was
+  developed by the electronics giant Philips for
+  the transfer of data between integrated
+  circuits. It has been adopted by many
+  manufacturers and can be used to communicate
+  with many devices including memories, clocks,
+  displays, speech module, etc.
+
+  This implementation was developed by Gerard
+  Sexton and fully supports master and slave
+  operation, 10 bit addressing, address masking
+  and general call, as well as bus arbitration (ie
+  bus collisions in a multi master environment).
+
+  In the master mode, there is a choice of
+  interrupt or normal mode. In normal mode, the
+  I2C send and receive commands will not return
+  until the command completes or a timeout occurs
+  (if the timeout option has been specified). In
+  interrupt mode, the send and receive commands
+  return immediately allowing other MMBasic
+  commands to be executed while the send and
+  receive are in progress. When the send/receive
+  transactions have completed, an MMBasic
+  interrupt will be executed. This allows you to
+  set a flag or perform some other processing
+  when this occurs. When enabled the I2C function
+  will use UEXT pins 5 and 6, UEXT.5 becomes the
+  I2C clock line (SCL) and UEXT.6 becomes the I2C
+  data line (SDA). Both of these pins have pullup
+  resistors 4.7K. I2C is also connected via R4 and
+  R26 to PIN(5) and PIN(6) ARDUINO.A4 (SDA) and
+  ARDUINO.A5 (SCL) .
+
+  Be aware that when running the I2C bus at above
+  150KHz the cabling between the devices becomes
+  important. Ideally the cables should be as short
+  as possible (to reduce capacitance) and also the
+  data and clock lines should not run next to each
+  other but have a ground wire between them (to
+  reduce crosstalk). If the data line is not
+  stable when the clock is high, or the clock line
+  is jittery, the I2C peripherals can get
+  "confused" and end up locking the bus (normally
+  by holding the clock line low). If you do not
+  need the higher speeds then operating at 100kHz
+  is the safest choice.
+
+  There are four commands for master mode: I2CEN,
+  I2CDIS, I2CSEND and I2RCV. 
+
+  For slave mode the commands are: I2CSEN, I2SDIS,
+  I2CSSEND and I2CSRCV. The master and slave modes
+  can be enabled simultaneously however, once a
+  master command is in progress, the slave
+  function will be "idle" until the master
+  releases the bus. Similarly, if a slave command
+  is in progress, the master commands will be
+  unavailable until the slave transaction
+  completes. 
+
+  Both the master and slave modes use an MMBasic
+  interrupt to signal a change in status. These
+  interrupt routines operate the same as a general
+  interrupt on an external I/O pin and must be
+  terminated with an IRETURN command to return
+  control to the main program when completed. The
+  automatic variable MM.I2C will hold the result of a 
+  command or action. 
+
+  I2C Master Mode Commands 
+
+  I2CEN speed, timeout [,interrupt-line]
+
+  Enables the I2C module in master mode. 'speed'
+  is a value between 10 and 400 (for bus speeds
+  10kHz to 400kHz). 'timeout' is a value in
+  milliseconds after which the master send and
+  receive commands will be interrupted if they
+  have not completed. The minimum value is 100. A 
+  value of zero will disable the timeout (this is
+  not recommended). 
+  'interrupt-line' is optional. It specifies the
+  line number of an interrupt routine to run when
+  the send or receive command completes. If this
+  is not supplied, the send and receive command
+  will only return when they have completed or
+  timed out. If it is supplied then the send and
+  receive will complete immediately and the
+  command will execute in the background. 
+
+  I2CDIS 
+
+  Disables the slave I2C module. It will also send
+  a stop if the bus is still held. 
+
+  I2CSEND address, option, snd-len, snd-data
+   [,snd-data]
+
+  Send data to the I2C slave device. 
+
+  'address' is the slave I2C address.
+
+  'option' is a number between 0 and 3, 1=keep
+  control of the bus after the command (a stop
+  condition will not be sent at the completion 
+  of the command);  2=treat the address as a 10
+  bit address ; 3=combine 1 and 2 (hold the bus
+  and use 10 bit addresses). 
+
+  'snd-len' is the number of bytes to send. 
+
+  'snd-data' is the data to be sent - this can be
+  specified in various ways (all values sent will
+  be between 0 and 255): 
+
+  The data can be supplied in the command as
+  individual bytes. 
+
+  Example
+
+  \> I2CSEND &H6F,1,3,&H23,&H43,&H25 
+
+  The data can be in a one dimensional array (the
+  subscript does not
+
+  Example
+
+  \> I2CSEND &H6F,1,3,ARRAY(0)
+
+  The data can be a string variable (not a
+  constant). 
+
+  Example
+
+  \> I2CSEND &H6F,1,3,STRING$ 
+
+  The automatic variable MM.I2C will hold the
+  result of the transaction.
+
+  I2CRCV address, bus-hold, rcv-len, rcv-buf
+   [, snd-len, snd-data] 
+
+  Receive data from the I2C slave device with the
+  optional ability to send some data first. 
+
+  'address' is the slave I2C address (note that 10
+  bit addressing is not supported). 
+
+  'option' is a number between 0 and 3 ; 1=keep
+  control of the bus after the command (a stop
+  condition will not be sent at the completion of
+  the command) ; 2=treat the address as a 10 bit 
+  address; 3=combine 1 and 2 (hold the bus and use
+  10 bit addresses). 
+
+  'rcv-len' is the number of bytes to receive.  
+
+  'rcv-buf' is the variable to receive the data -
+  this is a one dimensional array or if 'rcv-len'
+  is 1 then this may be a normal variable. 
+
+  The array subscript does not have to be zero and
+  will be honoured, also bounds checking is
+  performed. Optionally you can specify data to
+  be sent first using snd-len and snd-data. These
+  parameters are used the same as in the I2CSEND
+  command (ie, snd-data can be a constant, an
+  array or a string variable). 
+
+  Examples
+
+  \> I2CRCV &H6F,1,1,BYTE 
+  \> I2CRCV &H6F,1,5, ARR(0)
+  \> I2CRCV &H6F,1,4,ARR(2),3,&H12,&H34,&H56 
+  \> I2CRCV &H6F,1,3,RCVARRAY(0),4,SNDARRAY(0) 
+
+  The automatic variable MM.I2C will hold the
+  result of the transaction.
+
+  I2C Slave Mode Commands 
+
+  I2CSEN address, mask, option, send-int-line,
+   rcv-int-line
+
+  Enables the I2C module in slave mode. 
+
+  'address' is the slave I2C address
+
+  'mask' is the address mask (bits set as 1 will
+  always match) option is a number between 0 and
+  3 ; 1= allows MMBasic to respond to the general
+  call address. When this occurs the value of
+  MM.I2C will be set to 4; 2 = treat the address
+  as a 10 bit address ; 3 = combine 1 and 2
+  (respond to the general call address and use 10
+  bit addresses). 
+
+  'send-int-line' is the line number of a send
+  interrupt routine to be invoked when the module
+  has detected that the master is expecting data 
+
+  'rcv-int-line' is the line number of a receive
+  interrupt routine to be invoked when the module
+  has received data from the master. 
+
+  I2CSDIS 
+
+  Disables the slave I2C module. 
+
+  I2CSSEND snd-len, snd-data [,snd-data] 
+
+  Send the data to the I2C master. This command
+  should be used in the send interrupt (ie in the
+  snd_int-line when the master has requested
+  data). Alternatively a flag can be set in the
+  send interrupt routine and the command invoked
+  from the main program loop when the flag is set. 
+
+  'snd-len' is the number of bytes to send. 
+
+  'snd-data' is the data to be sent. This can be
+  specified in various ways, see the I2CSEND
+  commands for details. 
+
+  I2CSRCV rcv-len, rcv-buf, rcv-d
+
+  Receive data from the I2C master device. This
+  command should be used in the receive interrupt
+  (ie in the rcv-int-line when the master has 
+  sent some data). Alternatively a flag can be set
+  in the receive interrupt routine and the command
+  invoked from the main program loop when the flag
+  is set. 
+
+  'rcv-len' is the maximum number of bytes to
+  receive. 
+
+  'rcv-buf' is the variable to receive the data -
+  this is a one dimensional array or if rcv-len is
+  1 then this may be a normal variable. 
+
+  The array subscript does not have to be zero and
+  will be honoured, also bounds checking is performed. 
+
+  'rcv-d' will contain actual number of bytes
+  received by the command. 
+
+  I2C Automatic Variable 
+
+  MM.I2C 
+
+  Is set to indicate the result of an I2C operation. 
+
+  0 = The command completed without error. 
+  1 = Received a NACK response 
+  2 = Command timed out 
+  4 = Received a general call address (when in
+   slave mode) 
+
+  I2C Utility Command
+
+  NUM2BYTE number, array(x) or 
+  NUM2BYTE number, variable1, variable2,
+   variable3, variable4
+
+  Convert number to four numbers containing the
+  four separate bytes of number (MMBasic numbers
+  are stored as the C float type and are four
+  bytes in length). The bytes can be returned as
+  four separate variables, or as four elements of
+  array starting at index x. 
+
+  See the function BYTE2NUM() for the reverse of
+  this command. 
+
+  BYTE2NUM(array(x)) or 
+  BYTE2NUM(byte1,byte2,byte3,byte4)
+
+  Return the number created by storing the four
+  arguments as consecutive bytes (MMBasic numbers
+  are stored as the C float type and are four 
+  bytes in length). The bytes can be supplied as
+  four separate numbers or as four elements of
+  array starting at index x. 
+
+  See the command NUM2BYTE for the reverse of this
+  function. 
+
+  Example: This code changes MOD-IO address by I2C
+  commands:
+
+  \> 5 'edit line 40 to change new address 
+  \> 10 CLS 
+  \> 20 INPUT "Press Hold But on MOD-IO then hit
+   enter ";a
+  \> 30 CurI2c = &h58 
+  \> 40 NewI2c = &h5a 
+  \> 50 I2CEN 100,100 ' Enable I2C 
+  \> 60 I2CSEND CurI2c,1,2, &hf0, NewI2c 
+  \> 70 I2CDIS 
+  \> 80 END

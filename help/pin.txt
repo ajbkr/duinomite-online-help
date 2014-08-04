@@ -1,0 +1,28 @@
+NAME
+  PIN -- the PIN command
+
+DESCRIPTION
+  The PIN (pin)= value command. For a 'pin'
+  configured as digital output this will set the
+  output to low ("value" is zero) or high ("value"
+  non zero). You can set an output high or low
+  before it is configured as an output and that
+  setting will be the default output when the
+  SETPIN command takes effect. 
+
+  'pin' zero is a  special case and will always
+  control the green LED used for micro SD card
+  accesses.
+
+  A "value" of non zero will turn the LED on, or
+  zero for off.
+
+  See the function PIN() for reading from a pin
+  and the command SETPIN for configuring it.
+
+EXAMPLE
+  \> 10 PIN(0) = 1 'Turn on green LED
+  \> 20 PAUSE 500  'wait 500ms
+  \> 30 PIN(0) = 0 'Turn off green LED
+  \> 40 PAUSE 500  'wait 500ms
+  \> 50 GOTO 10	 'and again

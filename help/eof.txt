@@ -1,0 +1,25 @@
+NAME
+  EOF -- the EOF function
+
+DESCRIPTION
+  The EOF([#]nbr) function will return true if the
+  file previously opened for INPUT with the file
+  number 'nbr' is positioned at the end of the
+  file.
+
+  If used on a file number opened as a serial port
+  this function will return true if there are no
+  characters waiting in the receive buffer.
+
+  The # is optional.
+
+SEE ALSO
+  OPEN, INPUT, LINE INPUT, INPUT$
+
+EXAMPLE
+  \> 10 OPEN "COM1:19200" AS #5
+  \> 20 IF NOT EOF(#5) THEN PRINT INPUT$(1,#5);
+  \> 30 GOTO 20
+
+  Open the COM1 serial port and if a character is
+  received in the buffer print it.

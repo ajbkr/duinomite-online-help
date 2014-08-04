@@ -1,0 +1,6 @@
+NAME
+  NEW -- the NEW command
+
+DESCRIPTION
+  The NEW command will delete the program in
+  memory and clear all variables.

@@ -1,0 +1,22 @@
+NAME
+  GOSUB -- the GOSUB command
+
+DESCRIPTION
+  The GOSUB linenumber command executes a
+  subroutine call to the specified linenumber. The
+  subroutine must end with a RETURN.
+
+SEE ALSO
+  GOTO
+
+EXAMPLE
+  \> 10 FOR I = 1 TO 3
+  \> 20 GOSUB 50
+  \> 30 NEXT
+  \> 40 END
+  \> 50 PRINT "Hello world"
+  \> 60 RETURN
+  \> RUN
+  Hello world
+  Hello world
+  Hello world

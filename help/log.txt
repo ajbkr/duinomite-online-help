@@ -1,0 +1,18 @@
+NAME
+  LOG -- the LOG function
+
+DESCRIPTION
+  The LOG(nbr) function returns the natural
+  logarithm of the argument 'nbr'.
+
+  'nbr' must be a number greater than zero.
+
+EXAMPLES
+  \> PRINT LOG(2)
+  0.693147
+
+  \> PRINT LOG(1)
+  0
+
+  \> PRINT LOG(0.0001)
+  -9.21034

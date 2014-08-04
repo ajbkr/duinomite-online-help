@@ -1,0 +1,16 @@
+NAME
+  DELETE -- the DELETE command
+
+DESCRIPTION
+  The DELETE command deletes a program line or a
+  range of lines.
+
+  DELETE line
+  DELETE -lastline
+  DELETE firstline-
+  DELETE firstline-lastline
+
+  If -lastline is used it will start with the
+  first line to the end of the program. If
+  startline- is used it will delete to the end of
+  the program.

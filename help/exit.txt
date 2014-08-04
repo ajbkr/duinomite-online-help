@@ -1,0 +1,21 @@
+NAME
+  EXIT -- the EXIT command
+
+DESCRIPTION
+  The EXIT command by itself will exit the program
+  and in a DO...LOOP will terminate the loop.
+
+  The EXIT FOR command will terminate a FOR...NEXT
+  loop.
+
+EXAMPLE
+  \> 10 DO 
+  \> 20 PRINT "Hello"
+  \> 30 I = I + 1
+  \> 40 IF I = 4 THEN EXIT
+  \> 50 LOOP
+  \> RUN
+  Hello
+  Hello
+  Hello
+  Hello

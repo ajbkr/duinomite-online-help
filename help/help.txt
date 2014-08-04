@@ -1,0 +1,78 @@
+NAME
+  HELP -- DuinoMite Help File Version 2 (custom)
+
+DESCRIPTION
+  This helpfile is a work in progress and in time
+  will be the main help file that users can store
+  on the micro SD card and have a precise online
+  help file with code examples to ensure a handy
+  reference will always be available when needed.
+
+  A new feature for the Duinomite is the addition
+  of this new help system. One can add the
+  following code to the AUTORUN.BAS file "OPTION
+  F1 "help"+chr$(13)" then when F1 is pressed this
+  help page will come up. The 'help' folder must
+  be installed on the micro SD card (Drive B:).
+
+  Due to the maximum length of a file name being 8
+  characters, commands etc have abbreviated names
+  to fit this convention. The file names in
+  brackets () are the shortened names.
+
+  One can bring up any files by simply doing help
+  "whatever and the file will come on the screen
+  and not interrupt the program one is working on.
+  All file names are in lower case.
+
+EXAMPLE
+  \>help "pause   :-will clear the screen and show
+   the "pause" command, then go back to the
+   command prompt.
+
+  The information in this help file system was
+  taken from the MMBasic V2.7 PDF and the Olimex
+  Duinomite V1.1 PDF. Many thanks for both of
+  those resources used to create this help file
+  system.
+
+SEE ALSO
+  AUTO - CHDIR - CIRCLE - CLEAR - CLOSE -
+  CLOSE_CONSOLE (cls_con) - CANOPEN - CANSEND -
+  CANRCV - CLS - CONTINUE - COPYRIGHT (cy_right) -
+  DATA - DATE - DELETE - DIM - DO - DRIVE - EDIT -
+  ELSE - ELSEIF - ENDIF - END - ERASE - ERROR -
+  EXIT - FILES - FONT - FOR - GOSUB - GOTO - IF -
+  INPUT - IRETURN - KILL - LET - LINE -
+  LINE_INPUT (line_inp) - LIST - LOAD - LOADBMP -
+  LOCATE - LOOP - MEMORY - MERGE - MKDIR - NAME
+  NEW - NEXT - ON - OPEN -
+  OPEN comspec$ (open_com) - REM - RMDIR -
+  OPTION - PAUSE - PIN - PIXEL - POKE - PRINT -
+  RANDOMIZE (random) - READ - RENUMBER -
+  RESTORE - RETURN - RUN - SAVE - SAVEBMP -
+  SETPIN - SETTICK - SOUND - STEP - TIME -
+  TIMER - TROFF - TRON - XMODEM
+
+  ABS - ASC - ATN - CHR$ - CINT - COS - CWD$ -
+  DATE$ (dates) - EOF - FIX - FORMAT - HEX -
+  INKEY - INPUT (inputs) - INSTR - INT - LEFT -
+  LEN - LOC - LOF - LOG - LCASE - MID - OCT -
+  PEEK - PIN (pins) - POS - PIXEL (pixelxy) -
+  RIGHT - RND - SGN - SIN - SPACE - SPC -
+  SPI - SQR - STR - STRING - TAB - TAN -
+  TIME (times) - TIMER (timers) - UCASE - VAL
+
+  - Version Changes (version)
+  - Setup (setup)
+  - Serial Communications (serial)
+  - I2C Communications (i2c)
+  - SPI Communications (spic)
+  - One Wire (onewire)
+  - Interrupts (inter)
+  - Loadable Fonts (loadfont)
+  - Operators and Precendence (operate)
+  - Deprecated Commands (deprec)
+  - CAN (canopen, canrcv, cansend)
+  - LOADBMP (loadbmp)
+  - FONT LOADB (font)

@@ -1,0 +1,25 @@
+NAME
+  LOAD -- the Load command
+
+DESCRIPTION
+  The LOAD file$ command loads a program called
+  'file$' from the default drive into working
+  memory.
+
+  Quotation marks are required around a string
+  constant, although you can omit the trailing
+  quotation mark in this command.
+
+  If an extension is not specified, '.BAS' will be
+  appended to the filename.
+
+SEE ALSO
+  CWD, CHDIR, DRIVE, FILES, MKDIR, RMDIR, RUN,
+  SAVE.
+
+EXAMPLE
+  \> LOAD "TEST.BAS
+  \> LOAD "TEST
+
+  If an extension is not specified, '.BAS' will be
+  appended to the filename.

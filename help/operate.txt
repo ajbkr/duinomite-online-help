@@ -1,0 +1,64 @@
+NAME
+  OPERATE -- operators and precedence
+
+DESCRIPTION
+  The following operators, in order of precedence,
+  are recognised. Operators that are on the same
+  level (for example + and -) are processed with a
+  left to right precedence as they occur on the
+  program line. 
+
+  Arithmetic operators: 
+    ^  Exponentiation 
+
+    * / \ MOD  Multiplication, division, integer
+               division and modulus (remainder) 
+
+    +  -  Addition and subtraction 
+ 
+  Logical operators: 
+    NOT  logical inverse of the value on the right 
+
+    <>    <    >    <=    =<   >=    => 
+
+      Inequality, less than, greater than, less
+      than or equal to, less than or equal to
+      (alternative version), greater than or
+      equal to, greater than or equal to
+      (alternative version)
+
+    =  equality
+
+    AND    OR    XOR  Conjunction, disjunction, 
+	              exclusive or.
+
+      The operators AND, OR and XOR are bitwise
+      operators. For example PRINT 3 AND 6 will
+      output 2. 
+
+    The other logical operations result in the
+    number 0 (zero) for false and 1 for true.
+    For example, the statement PRINT 4 >= 5 will
+    print the number zero on the output and the
+    expression A = 3 > 2 will store +1 in A. 
+
+    The NOT operator is highest in precedence so
+    it will bind tightly to the next value. For
+    normal use the expression to be negated should
+    be placed in brackets.  For example,
+
+    IF NOT (A = 3 OR A = 8) THEN
+
+  String operators: 
+
+    +  Join two strings 
+
+    <>    <    >    <=    =<    >=    => 
+
+      Inequality, less than, greater than, less
+      than or equal to, less than or equal to
+      (alternative version), greater than or equal
+      to, greater than or equal to (alternative
+      version) 
+
+    =  equality. 

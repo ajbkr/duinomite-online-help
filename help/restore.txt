@@ -1,0 +1,22 @@
+NAME
+  RESTORE -- the RESTORE command
+
+DESCRIPTION
+  The RESTORE command resets the line and position
+  counters for DATA and READ statements to the top
+  of the program file.
+
+EXAMPLE
+  \> 10 DIM A(4) :  DIM B(4)
+  \> 20 FOR I = 0 TO 4
+  \> 30 READ A(I)
+  \> 40 PRINT A(I);
+  \> 50 NEXT I
+  \> 60 RESTORE 'delete line to see difference
+  \> 70 FOR I = 0 TO 4
+  \> 80 READ B(I)
+  \> 90 PRINT B(I);
+  \> 100 NEXT I
+  \> 110 DATA 0,1,2,3,4,5,6,7
+  \> RUN
+  0 1 2 3 0 1 2 3

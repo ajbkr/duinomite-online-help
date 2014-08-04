@@ -1,0 +1,25 @@
+NAME
+  LIST -- the LIST command
+
+SYNOPSIS
+  LIST
+  LIST line
+  LIST -lastline
+  LIST firstline-
+  LIST firstline - lastline
+
+DESCRIPTION
+  Lists all lines in a program or a range of
+  lines.
+
+  If -lastline is used it will start with with the
+  first line in the program.
+
+  If startline- is used it will list to the end
+  line of the program.
+
+EXAMPLE
+  LIST 10
+  LIST 10-
+  LIST -100
+  LIST 10-50

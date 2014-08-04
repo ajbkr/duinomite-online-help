@@ -1,0 +1,6 @@
+NAME
+  CLOSE -- the CLOSE CONSOLE command
+
+DESCRIPTION
+  The CLOSE CONSOLE command will close a serial
+  port that been opened as the console.

@@ -1,0 +1,22 @@
+NAME
+  SAVE -- the SAVE command
+
+DESCRIPTION
+  The SAVE [file$] command saves the program in
+  the current working directory of the default
+  drive (internal flash drive A: or micro SD card
+  drive B:) as 'file$'. The file name is optional
+  and if omitted the last filename used in SAVE,
+  LOAD or RUN will be used automatically.
+
+  If an extension is not specified, ".BAS" will be
+  added to the filename automatically.
+
+SEE ALSO
+  CHDIR, CWD, DRIVE, FILES, LOAD, MKDIR, RMDIR,
+  RUN.
+
+EXAMPLES
+  \> SAVE "TEST.BAS"
+  \> SAVE "TEST.BAS
+  \> SAVE "TEST

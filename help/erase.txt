@@ -1,0 +1,9 @@
+NAME
+  ERASE -- the ERASE command
+
+DESCRIPTION
+  The ERASE variable[,variable]... command will
+  delete array variables and free up the memory.
+
+  Use CLEAR to delete all variables including all
+  array variables.

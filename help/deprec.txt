@@ -1,0 +1,153 @@
+NAME
+  DEPREC -- deprecated commands
+
+DESCRIPTION
+  These commands are only included to assist in
+  converting programs written for Microsoft BASIC.
+  For new programs, the corresponding commands in
+  MMBasic should be used.
+
+  PSET PRESET Command
+
+  Purpose:
+
+  To display a point at a specified place on the
+  screen. Please use PIXEL(x,y) for new code.
+
+  Syntax:
+
+  PSET(x,y)
+  PRESET(x,y)
+
+  Comments:
+
+  (x,y) represents the coordinates of the point. 
+  PSET displays a white pixel, PRESET displays a
+  black pixel. 
+
+  Coordinate values can be beyond the edge of the
+  screen. (0,0) is always the upper-left corner
+  and (MM.HRES, MM.VRES) is the lower-right
+  corner.
+
+  Example 1:
+
+  The following draws a diagonal line from (0,0)
+  to (100,100).
+	
+  \> 10 CLS
+  \> 20 FOR I=0 TO 100
+  \> 30 PSET(I,I)
+  \> 40 NEXT
+
+  Example 2:
+
+  The following clears out the line by setting
+  each pixel to 0.
+
+  \> 50 FOR I=100 TO 0 STEP -1
+  \> 60 PRESET(I,I)
+  \> 70 NEXT I
+
+  WHILE ... WEND Command
+
+  Purpose:
+
+  To execute a series of statements in a loop as
+  long as a given condition is true. Please use
+  the DO ... LOOP statements for new code.
+
+  Syntax:
+
+  WHILE expression
+    [loop statements]
+  WEND 
+
+  Comments:
+
+  If expression is nonzero (true), loop statements
+  are executed until the WEND statement is
+  encountered. MMBasic then returns to the WHILE
+  statement and checks expression. If it is still
+  true, the process is repeated.
+
+  If it is not true, execution resumes with the
+  statement following the WEND statement. WHILE
+  and WEND loops may be nested to any level. 
+  Each WEND matches the most recent WHILE. An
+  unmatched WHILE statement causes a "WHILE
+  without matching WEND" error. An unmatched WEND 
+  statement causes a "LOOP without matching DO"
+  error.
+
+  Example
+
+  \> 10 SETPIN 1,8
+  \> 20 WHILE PIN(0)=0 'blink LED on ARDUINO.A0
+   until USER button is press
+  \> 30 PIN(1) = 1: PAUSE 100: PIN(1) = 0
+  \> 35 PAUSE 100
+  \> 40 WEND
+
+  WRITE Command
+
+  Purpose:
+
+  To write data to a sequential file. Please use
+  PRINT for new code.
+
+  Syntax:
+
+  WRITE [#filenum,] list-of-expressions
+
+  Comments:
+
+  Outputs the value of each expression separated
+  by commas (,). filenum is the number under which
+  the file was opened for output or append, if
+  missing writes to screen.
+
+  List-of-expressions is a list of string and/or
+  numeric expressions separated by commas or
+  semicolons.
+
+  The WRITE and PRINT statements differ in that
+  WRITE inserts commas between the items as they
+  are written and delimits strings with quotation
+  marks, making explicit delimiters in the list
+  unnecessary. Another difference is that WRITE
+  does not put a blank in front of a positive
+  number. After the last item in the list is
+  written, a carriage return/line feed sequence
+  is inserted.
+
+  If the expression is a number it is outputted
+  without preceding or trailing spaces. If it is a
+  string it is surrounded by double quotation
+  marks "". 
+
+  The list is terminated with a new line.
+
+  Examples
+
+  \>WRITE 1, 2, 3, 4, 5, "HELLO"
+  \>1,2,3,4,5,"HELLO"
+
+  As you can see WRITE removes the spaces, add
+  commas between the expressions and keeps the ""
+
+  \>Let A$ = "CAMERA" and B$ = "93604-1".
+
+  The following statement:
+
+  \>WRITE #1, A$, B$
+
+  writes the following image to disk:
+
+  "CAMERA", "93604-1"
+
+  A subsequent INPUT$ statement, such as the
+  following, would input "CAMERA" to A$ and
+  "93604-1" \>to B$:
+
+  \>INPUT #1, A$, B$

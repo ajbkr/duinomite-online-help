@@ -1,0 +1,21 @@
+NAME
+  CHDIR -- the CHDIR command
+
+DESCRIPTION
+  The CHDIR dir$ command changes the working
+  directory on the default drive to 'dir$'.
+
+  The special entry ".." represents the parent of
+  the current directory and "." represents the
+  current directory.
+
+SEE ALSO
+  CWD, DRIVE, FILES, MKDIR, NAME, RMDIR
+
+EXAMPLE
+  \> CHDIR "HELP"
+  \> PRINT CWD$
+  \HELP
+  \> CHDIR "\"
+  \> PRINT CWD$
+  \

@@ -1,0 +1,13 @@
+NAME
+  LOCATE -- the LOCATE command
+
+DESCRIPTION
+  The LOCATE x,y command positions the cursor to a
+  location in pixels and the next PRINT command
+  will place its output at this location.
+
+  Note: This only affects the video output.
+
+EXAMPLE
+  \> 10 LOCAT 1,1
+  \> 20 PRINT "TOP LEFT!"

@@ -1,0 +1,29 @@
+NAME
+  XMODEM -- the XMODEM command
+
+SYNOPSIS
+  XMODEM SEND file$
+  XMODEM RECIEVE file$
+
+DESCRIPTION
+  The XMODEM command transfers a file to or from a
+  remote computer using the XModem protocol. The
+  transfer is done over the USB connection or, if
+  a serial port is opened as console, over that
+  serial port. "file$" is the file on the micro SD
+  card or internal flash to be sent or recieved.
+
+  The XModem protocol requires a co-operating
+  software program running on the remote computer
+  and connected to its serial port. It has been
+  tested on Tera Term running on Windows and it is
+  recommended that this be used. After running the
+  XMODEM command in MMBasic select:
+
+    FILE->Transfer->XMODEM->Recieve/Send
+
+  from the Tera Term menu to start the transfer.
+  The transfer can take up to 15 seconds to start
+  if the XMODEM command fails to establish
+  communications it will return to the MMBasic
+  prompt after 30 seconds.

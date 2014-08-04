@@ -1,0 +1,9 @@
+NAME
+  TIMER -- the TIMER command
+
+DESCRIPTION
+  The TIMER=msec command resets the timer to a
+  number of milliseconds. Normally this is just
+  used to reset the timer to zero but you can set
+  it to any positive integer. See the TIMER
+  function for more details.

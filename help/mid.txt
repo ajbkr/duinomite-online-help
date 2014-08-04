@@ -1,0 +1,47 @@
+NAME
+  MID -- the MID$ function
+
+SYNOPSIS
+  MID$(string$,start-position-in-string
+   [,number-of-chars])
+
+DESCRIPTION
+  MID$ returns a substring of 'string$' beginning
+  at 'start-position-in-string' and continuing for
+  'number-of-chars' bytes. If 'number-of-chars' is
+  omitted, the returned string will extend to the
+  end of 'string$'
+
+  'start-position-in-string' must be in the range
+  1 to 255. 'number-of-chars' must be in the range
+  0 to 255.
+
+  If 'number-of-chars' is omitted, or if there are
+  fewer than 'number-of-chars' characters to the
+  right of 'start-position-in-string', all
+  rightmost characters beginning with
+  'start-position in-string' are returned.
+
+  If [start-position-in-string] > LEN(x$), MID$
+  function returns a null string.
+
+  If [number-of-chars] equals 0, the MID$ function
+  returns a null string.
+
+  If either [start-position-in-string] or
+  [number-of-chars] is out of range, a "Number out
+  of bounds" error is returned.
+
+SEE ALSO
+  INSTR, LEFT$(), RIGHT$().
+
+EXAMPLE
+  \> 10 A$="GOOD"
+  \> 20 B$="MORNING EVENING AFTERNOON"
+  \> 30 PRINT A$; MID$(B$, 8, 8)
+  \> RUN
+  GOOD EVENING
+
+  Line 30 concatenates (joins) the A$ string to
+  another string with a length of 8 characters,
+  beginning at position 8 within the B$ string.

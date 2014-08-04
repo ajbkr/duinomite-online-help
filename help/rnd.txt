@@ -1,0 +1,27 @@
+NAME
+  RND -- the RND function
+
+DESCRIPTION
+  The RND(nbr) function returns a pseudo random
+  number in the range of 0 to 0.99999.  The 'nbr'
+  value is ignored if supplied. The RANDOMIZE
+  command reseeds the random number generator. 
+
+  To get a random number within the range of zero
+  through n, use the following formula:
+  INT(RND*(n+1))
+
+EXAMPLES
+  \> PRINT RND
+  0.513871
+
+  \>PRINT RND(-1)
+  0.94763
+
+  \>PRINT INT(RND*101) 'prints random number 0 -
+   100
+  53
+
+  \>PRINT RND (1) 'prints 2 nos due to space
+   between RND and (1)
+  0.175726 1

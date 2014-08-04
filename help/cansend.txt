@@ -1,0 +1,42 @@
+NAME
+  CANSEND -- the CANSEND command
+	
+SYNOPSIS
+  CANSEND id, type, len, data(), ok	
+
+DESCRIPTION
+  The CANSEND places a CAN messages in the
+  transmit queue and the moment a CAN transmit
+  message slot becomes available, the CAN message
+  sends onto the CAN bus. 
+	
+  Argument 'id' sets the message identifier and
+  'type' the identifier type.
+	
+  Set 'type' to 0 for a 11-bit STD message
+  identifier (most common). Or set 'type' to 1 for
+  a 29-bit EXT message identifier. 
+	
+  The number of data bytes in the messages is set
+  by argument 'len'. This can be anywhere in the
+  range 1..8. 
+	
+  The actual message data is passed as a
+  1-dimensional array called 'data'.
+	
+  Pass in a variable for argument 'ok' to
+  determine if the message transmission was
+  successful. In this case 'ok' holds the value 1.
+  If it holds the value 0 then either the transmit
+  queue is full so you can try a little later
+  again or the connection with the CAN bus has not
+  yet been opened (see command CANOPEN).
+	
+EXAMPLE
+  100 DIM txData(2) : DIM txOk
+  110 CANOPEN 500000
+  120 txData(0) = &H55
+  130 txData(1) = &HAA
+  140 CANSEND &H123,0,2,txData(0),txOk
+  150 IF txOk = 0 THEN PRINT "Could not send CAN message"
+  160 CANCLOSE

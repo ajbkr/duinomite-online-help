@@ -1,0 +1,32 @@
+NAME
+  TIME -- the DATE and TIME commands
+
+DESCRIPTION
+  In order to set the DATE and TIME the following
+  commands are used.
+
+    DATE$="DD-MM-YY"
+    DATE$="DD/MM/YY"
+
+   On power up the date will to 00-00-2000. 
+
+    TIME$="HH-MM-SS"
+
+  The MM and SS are optional and will default to
+  zero if not specified (ie: TIME$='14.30' will
+  set the clock to 14:30 with zero seconds. Time
+  is set to zero on powerup.
+
+  The internal clock/calendar will keep track of
+  the time and date including leap years.  The
+  time is set to midnight on power up. To set the
+  time use the command TIME$. 
+
+EXAMPLE
+  \> DATE$="29-01-12"
+  \> PRINT DATE$
+  29-01-2012
+
+  \> TIME$="08:59:10"
+  \> PRINT TIME$
+  08:59:10

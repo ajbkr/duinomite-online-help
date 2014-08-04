@@ -1,0 +1,16 @@
+NAME
+  REM -- the REM command
+
+DESCRIPTION
+  The REM string command allows remarks to be
+  included in a program. Lines n a program which
+  begin with a REM statement are not executed.
+
+  Note the Microsoft convention of using a single
+  quotation mark to denote remarks is also
+  supported and is preferred.
+
+EXAMPLES
+  \> 10 REM  My Program V1.0 billy@hill.com
+
+  \> 10 ' This is a remark

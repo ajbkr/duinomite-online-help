@@ -1,0 +1,20 @@
+NAME
+  CLEAR -- the CLEAR command
+
+DESCRIPTION
+  The CLEAR command will delete all variable and
+  array memory and recover that memory.
+
+SEE ALSO
+  ERASE
+
+EXAMPLE
+  \> MEMORY
+  1kB ( 3%) Program memory used
+  1kB ( 6%) Variable memory used
+  1kB ( 2%) Array and string memory used
+  \> CLEAR
+  \> MEMORY
+  1kB ( 3%) Program memory used
+  1kB ( 0%) Variable memory used
+  1kB ( 0%) Array and string memory used

@@ -1,0 +1,13 @@
+NAME
+  LCASE$ -- the LCASE function
+
+DESCRIPTION
+  The LCASE$(string$) function will return
+  'string$' to lowercase characters.
+
+SEE ALSO
+  UCASE.
+
+EXAMPLE
+  \>PRINT LCASE$("qWeRTyUIop")
+  \>qwertyuiop

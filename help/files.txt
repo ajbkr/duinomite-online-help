@@ -1,0 +1,27 @@
+NAME
+  FILES -- the FILES command
+
+DESCRIPTION
+  The FILES [search_pattern$] command will list
+  files in the current directory of the default
+  drive.
+
+  The micro SD card (drive B:) may use an optional
+  'search_pattern$'.
+
+  A question mark(?) matches any character and an
+  asterisk(*) as the first character of the
+  filename or extension will match any file or any
+  extension. 
+
+  If the search_pattern$ is omitted, all files
+  will be listed.
+
+SEE ALSO
+  DRIVE, KILL, LOAD, NAME, RUN, SAVE
+
+EXAMPLE
+  \> FILES
+  Directory: \
+  HELP                 <DIR>
+  GAME1.BAS              432

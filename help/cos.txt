@@ -1,0 +1,24 @@
+NAME
+  COS -- the COS function
+
+DESCRIPTION
+  The COS(number) function will return the cosine
+  of the argument 'number' in radians.
+
+  COS is the trigonometric cosine function. To
+  convert from degrees to radians, multiply by
+  pi/180.
+
+EXAMPLES
+  \> 10 X=2*COS(.4)
+  \> 20 PRINT X
+  \> RUN
+  1.84212
+
+  \> 10 PI=3.14159
+  \> 20 PRINT COS(PI);
+  \> 30 DEGREES=180
+  \> 40 RADIANS=DEGREES*PI/180
+  \> 50 PRINT COS(RADIANS)
+  \> RUN
+  -1 -1

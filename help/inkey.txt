@@ -1,0 +1,37 @@
+NAME
+  INKEY -- the INKEY function
+
+DESCRIPTION
+  The INKEY$ function reads the status of the
+  keyboard, and rerurns a single character if
+  available. If a character is not avaliable, this
+  function will immediatly return with a null
+  string ("").
+
+  No characters are displayed on the screen, and
+  all characters except the following are passed
+  to the program.
+
+  CTRL-BREAK
+  CTRL-NUM LOCK
+  CTRL-ALT-DEL
+  CTRL-PRTSCR
+  PRTSCR
+
+EXAMPLE
+  \> 10 CLS 
+  \> 15 'game moves rectangle on the screen 1,2,3
+   keys are used
+  \> 20 X = 0 : D = 1
+  \> 30 LINE (X*20,100)-(X*20+20,105),1,BF
+  \> 40 PAUSE 100
+  \> 50 LINE (X*20,100)-(X*20+20,105),0,BF
+  \> 60 C$ = INKEY$
+  \> 70 IF C$ = "1" THEN D = -1 'move right to
+   left
+  \> 80 IF C$ = "2" THEN D = 1 'move left to right
+  \> 90 IF C$ = "3" THEN END 'quit
+  \> 100 X = X + D
+  \> 110 IF X > 23 THEN X = 0
+  \> 120 IF X < 0 THEN X = 23
+  \> 130 GOTO 30

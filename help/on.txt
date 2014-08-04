@@ -1,0 +1,22 @@
+NAME
+  ON -- the ON command
+
+SYNOPSIS
+  ON variable [GOTO|GOSUB] line[,line,line..]
+
+DESCRIPTION
+  ON either branches (GOTO) or calls a subroutine
+  (GOSUB) based on the rounded value of variable:
+  if it is 1, the first line is called, if 2 the
+  second line is called etc...
+
+EXAMPLE
+  \> 10 INPUT "Enter a number between 1 and 3 "; A
+  \> 20 ON A GOTO 1000,2000,3000
+  \> 30 END
+  \> 1000 PRINT "Line 1000" : GOTO 10
+  \> 2000 PRINT "Line 2000" : GOTO 10
+  \> 3000 PRINT "Line 3000" : GOTO 10
+  \> RUN
+  Enter a number between 1 and 3 ? 2.3
+  Line 2000

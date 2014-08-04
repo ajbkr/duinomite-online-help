@@ -1,0 +1,22 @@
+NAME
+  CONTINUE -- the CONTINUE command
+
+DESCRIPTION
+  The CONTINUE command will resume a program that
+  has been stopped by the END statement, an error,
+  or CTRL-C. The program will restart with the
+  next statement following the previous stopping
+  point.
+
+EXAMPLE
+  \> 10 DO
+  \> 20 i = i +1
+  \> 30 PRINT i;
+  \> 40 PAUSE 500
+  \> 50 LOOP UNTIL i = 6
+  \> RUN
+  1 2 3
+  [CTRL-C]
+  \> CONTINUE
+  4 5 6
+  \>

@@ -1,0 +1,18 @@
+NAME
+  RETURN -- the RETURN command
+
+DESCRIPTION
+  The RETURN command ends a subroutine called by a
+  GOSUB.
+
+EXAMPLE
+  \> 10 GOSUB 50
+  \> 20 GOSUB 50
+  \> 30 PRINT "Bye"
+  \> 40 END
+  \> 50 PRINT "Hello"
+  \> 60 RETURN
+  \> RUN
+  Hello
+  Hello
+  Bye

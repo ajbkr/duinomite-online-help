@@ -1,0 +1,27 @@
+NAME
+  COPYRIGHT -- the COPYRIGHT command
+
+DESCRIPTION
+  The COPYRIGHT command will list all the
+  contributors to the MMBasic interpreter and
+  summarise the open source copyright statement.
+
+EXAMPLE
+  \>COPYRIGHT
+  Overall Copyright (c) 2011 Geoff Graham.
+  I2C, One Wire Support Copyright 2011 Gerard
+   Sexton.
+  Setup, Terminal, Full Screen Editor (c) 2011 Ken
+   Segler
+  USB/CDC and SD/FAT Support Copyright 2010
+  Microchip Technology Incorporated.
+
+  Video and keyboard routines from Lucio Di
+  Jasio's book "Programming 32-bit
+  Microcontrollers in C".
+  USB VID and PIDs are sublicensed by Microchip.
+
+  This is free software and comes with absolutely
+  no warranty.  It may be used and copied under
+  the terms of the GNU General Public License
+  V3.0.

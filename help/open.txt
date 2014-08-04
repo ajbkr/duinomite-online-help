@@ -1,0 +1,38 @@
+NAME
+  OPEN -- the OPEN command
+
+DESCRIPTION
+  The OPEN fname$ FOR mode AS [#]fnbr command will
+  open a file on the default drive for reading and
+  writing. 'fname$' is the filename (8 chars max)
+  with an optional extension (3 chars max)
+  separated by a dot(.). 'mode' is INPUT or OUTPUT
+  or APPEND. 
+
+  INPUT will open the file for reading and throw
+  an error if the file doesn't exist.
+
+  OUTPUT will open the file for writing and will
+  automatically overwrite any existing file with
+  the same name. 
+
+  APPEND will open the file for writing but it
+  will not overwrite an existing file, instead any
+  writes to the file will be appended to the end
+  of the file. If there is no existing file the
+  APPEND option will act the same as the OUPUT
+  mode (ie the file is created then opened for
+  writing). 'fnbr' is the file number (1 to 10).
+  The # is optional. Up to 10 files can be open
+  simultaneously. 
+
+  The INPUT, LINE INPUT, PRINT, WRITE and CLOSE
+  commands as well as the EOF() and INPUT$()
+  functions all use 'fnbr' to identify the file
+  being operated on.
+
+EXAMPLE
+  \> 10 OPEN "out1.txt" FOR input AS #1
+  \> 20 LINE INPUT#1, A$
+  \> 30 PRINT "Text: " A$
+  \> 40 CLOSE#1

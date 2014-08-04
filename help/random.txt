@@ -1,0 +1,15 @@
+NAME
+  RANDOMIZE -- the RANDOMIZE command
+
+DESCRIPTION
+  The RANDOMIZE nbr command seeds the random
+  number generator with "nbr". To generate a
+  different random sequence each time you must use
+  a different value for 'nbr'. One good way to do
+  this is use the TIMER function.
+
+EXAMPLE
+  \> 10 RANDOMIZE TIMER
+  \> 20 PRINT RND
+  \> RUN
+  0.377598

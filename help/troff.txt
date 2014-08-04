@@ -1,0 +1,7 @@
+NAME
+  TROFF -- the TROFF command
+
+DESCRIPTION
+  The TROFF command turns off the trace facility.
+
+  The TRON command turns on the trace facility.

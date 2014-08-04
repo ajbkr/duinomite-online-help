@@ -1,0 +1,23 @@
+NAME
+  CIRCLE -- the CIRCLE command
+
+SYNOPSIS
+  CIRCLE(x and y),r[,c[,F]]
+
+  The circle is drawn on the video output centred
+  at x and y with a radius of r. If c is zero the
+  pixels are turned off if it is non zero or not
+  specified the pixels are turned on (ie the
+  circle is drawn). The F option will cause the
+  circle to be filled according to the c 
+  parameter.
+
+  NOTE: As the pixels are not exactly square, the
+  circle will be oval to some degree.
+
+EXAMPLE
+  \> CIRCLE(30,60),30,1,F
+
+  This draws a circle starting at video screen
+  coordinates x=30, y=60 turning on the pixels and
+  then filling it to make a solid.

@@ -1,0 +1,21 @@
+NAME
+  ATN -- the ATN function
+
+DESCRIPTION
+  The ATN(number) function will return the
+  arctangent value of the argument 'number' in
+  radians.
+
+  The result is within the range of -p/2 to p/2.
+
+  The expression 'number' may be any numeric type. 
+
+  To convert from degrees to radians, multiply by
+  p/180.
+
+EXAMPLE
+  \> 10 INPUT X
+  \> 20 PRINT ATN(X)
+  \> RUN
+  ? 3
+  1.24905

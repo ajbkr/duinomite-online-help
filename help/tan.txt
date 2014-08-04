@@ -1,0 +1,15 @@
+NAME
+  TAN -- the TAN function
+
+DESCRIPTION
+  The TAN(nbr) function returns the tangent of the
+  argument 'nbr' in radians. 
+
+  To obtain TAN(x) when x is in degrees, use
+  TAN(x*pi/180).
+
+EXAMPLE
+  \>10 Y = TAN(X)
+
+  When executed, Y will contain the value of the
+  tangent of X radians.

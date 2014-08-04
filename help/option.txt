@@ -1,0 +1,72 @@
+NAME
+  OPTION -- the OPTION command
+
+SYNOPSIS
+  OPTION BASE [0|1]
+  OPTION ERROR [ABORT|CONTINUE]
+  OPTION PROMPT string$
+  OPTION Fnn string$
+
+DESCRIPTION
+  OPTION BASE [0|1]
+
+  Sets the lowest value for array subscripts to
+  either 0 or 1. The default is 0. This must be
+  used before any arrays are declared.
+
+  OPTION ERROR [ABORT|CONTINUE]
+
+  Sets the treatment for errors in file
+  input/output. The option CONTINUE will cause
+  MMBasic to ignore file related errors. 
+
+  The program must check the variale MM.ERRNO to
+  determine if and what error has occured. The
+  option ABORT sets the normal behaviour (ie stop
+  the program and print an error message. The
+  default is ABORT. Note that this option only
+  relates to errors reading or writing from the
+  micro SD card, it does not affect the handling
+  of syntax and other program errors.
+
+  OPTION PROMPT string$
+
+  Set the command prompt to the contents of
+  'string$' (which can also be an expression which
+  will be evaluated when the prompt is printed.)
+
+  For Example
+
+  OPTION PROMPT "OK"
+  OPTION PROMPT TIME$ + ":"
+  OPTION PROMPT CWD$ +":"
+
+  Maximum length of the prompt string is 48
+  characters. The prompt is reset to the default
+  ('>') on power up but you can automatically set
+  it by saving the following example program as
+  "AUTORUN.BAS" on the internal flash drive A:
+
+  10 OPTION PROMPT "My prompt:"
+  20 NEW
+
+  OPTION Fnn string$
+
+  Sets the prgrammable function keys 'Fnn' to the
+  contents of'string$' "Fnn" is the function key
+  F1 to F12. Maximum string length is 12
+  characters. "string$" can also be an expression
+  that will be evaluated at the time of running
+  the OPTION command. This is most often used to
+  append the ENTER key (chr$(13)), or double quotes
+  (chr$(34)).
+
+  For Example
+
+  OPTION F1 "RUN" + CHR$(13)
+  OPTION F6 "SAVE" + CHR$(34)
+  OPTION F10 "ENDIF"
+
+  Normally these commands are included in an
+  AUTORUN.BAS file (see OPTION PROMPT) for an
+  example.

@@ -1,0 +1,24 @@
+NAME
+  LEFT -- the LEFT function
+
+DESCRIPTION
+  The LEFT$(string$,number-of-chars) function will
+  return a substring of 'string$' with
+  'number-of-chars' from the left (beginning) of
+  the string.
+
+  'number-of-chars' must be within the range of 0
+  to 255. If 'number-of-chars' is greater than
+  LEN(x$), the entire 'string$' will be returned.
+  If 'number-of-chars' equals zero, the null
+  string (length zero) is returned.
+
+SEE ALSO
+  INSTR,  MID$(), RIGHT$() substring functions.
+
+EXAMPLE
+  \> 10 A$="BASIC"
+  \> 20 B$=LEFT$(A$, 3)
+  \> 30 PRINT B$
+  \> RUN
+     BAS

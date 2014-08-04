@@ -1,0 +1,26 @@
+NAME
+  DIM -- the DIM command
+
+SYNOPSIS
+  DIM variable(<d1>[,<d2>[,<d3>...]])
+
+DESCRIPTION
+  Allocates space in array memory for a new array,
+  with one dimension for each of the dimension
+  sizes d1, d2, d3, etc. given in the DIM
+  statement.
+
+  Note that the dimension sizes represent the
+  highest index number available. Since the lower
+  limit for the indices is always fixed at zero,
+  specifying a dimension of n reserves space for
+  n+1 variables in that dimension. 
+
+EXAMPLE
+  \> 10 DIM A$(2)
+  \> 20 A$(0)="0" : A$(1)="1" : A$(2)="2"
+  \> 30 FOR I = 0 TO 2
+  \> 40 PRINT A$(I);
+  \> 50 NEXT
+  \> RUN
+  0 1 2

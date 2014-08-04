@@ -1,0 +1,21 @@
+NAME
+  INT -- the INT function
+
+DESCRIPTION
+  The INT( number ) function will truncate an
+  expression to the next whole number less than or
+  equal to the argument.
+
+SEE ALSO
+  CINT().
+
+EXAMPLES
+  \> PRINT INT(9.89)
+  9
+
+  \> PRINT INT(-2.11)
+  -3
+
+  This behaviour is for Microsoft compatibility,
+  the FIX() function provides a true integer
+  function.

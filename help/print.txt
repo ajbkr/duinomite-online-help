@@ -1,0 +1,52 @@
+NAME
+  PRINT -- the PRINT command
+
+SYNOPSIS
+  PRINT expression [[,;]expression]...
+
+DESCRIPTION
+  This command outputs text to the screen.
+  Multiple expressions can be used and must be
+  separated by either:
+
+    Comma (,) which will output the tab character
+
+    Semicolon (;) which will not output anything
+    (it is just used to separate expressions).
+
+  Nothing or a space which will act the same as a
+  semicolon.
+
+  A semicolon(;) at the end of the expression list
+  will surpress the automatic output of a carriage
+  return/newline at the end of a print statement.
+
+  When printed, a number is preceded with a space
+  if positive or a minus(-) if negative but is not
+  followed by a space. Integers (whole numbers)
+  are printed without a decimal point while
+  fractions are printed with the decimal point and
+  significiant decimal digits. Large numbers
+  (greater than six digits) are printed in
+  scientific format.
+
+  The function FORMAT$() can be used to format
+  numbers. The function TAB() can be used to space
+  to a certain column and the string functions can
+  be used to justify or otherwise format strings.
+
+  A single question mark (?) can be used as a
+  shortcut for the PRINT keyword.
+
+  The PRINT #nbr, expression [[,;] expression]...
+
+  Is the same as the above command except that the
+  output is directed to a file previously opened
+  for OUTPUT or APPEND as "nbr".
+
+EXAMPLE
+  \> PRINT "Hello world"
+  Hello world
+
+  \> ? "Hello world"
+  Hello world

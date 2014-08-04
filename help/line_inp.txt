@@ -1,0 +1,29 @@
+NAME
+  LINE INPUT --	the LINE INPUT command
+
+SYNOPSIS
+  LINE INPUT [prompt$] string-variable$
+
+  This command reads the entire line from the
+  keyboard into 'string-variable$'. The optional
+  'prompt$' will be printed first. Unlike INPUT,
+  LINE INPUT will read a whole line, not stopping
+  for comma delimited data items.
+
+  A question mark is not printed unless it is part
+  of "prompt$".
+
+  LINE INPUT #nbr,string-variable$
+
+  This command is the same as the previous one
+  except that the input is read from a file
+  previously opened for INPUT as 'nbr'.
+
+SEE ALSO
+  OPEN, INPUT.
+
+EXAMPLE
+  \> 10 OPEN "OUT1.TXT" FOR input AS #1
+  \> 20 LINE INPUT#1, A$
+  \> 30 PRINT "Text: " A$
+  \> 40 CLOSE#1

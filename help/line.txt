@@ -1,0 +1,39 @@
+NAME
+  LINE -- the LINE command
+
+DESCRIPTION
+  The LINE[(x1,y1)] - (x2,y2)[,c[,B[F]]] command
+  draws a line or box on the video screen.
+
+  x1,y1 and x2,y2 specify the beginning and end
+  points of the line.
+
+  c specifies the displayed pixel (0=off, non
+  zero=on) and defaults to on if not specified.
+
+  (x1,y1) is optional and if omitted the last
+  drawing point will be used.
+
+  The optional B will draw a box with the points
+  (x1,y1) and (x2,y2) at opposite corners.
+
+  The optional BF will draw a box (as,B) and will
+  fill the interior.
+
+EXAMPLE
+  \> 10 CLS
+  \> 15 'game moves rectangle on the screen 1,2,3
+   keys are used
+  \> 20 X = 0 : D = 1
+  \> 30 LINE (X*20,100)-(X*20+20,105),1,BF
+  \> 40 PAUSE 100
+  \> 50 LINE (X*20,100)-(X*20+20,105),0,BF
+  \> 60 C$ = INKEY$
+  \> 70 IF C$ = "1" THEN D = -1 'move right to
+   left
+  \> 80 IF C$ = "2" THEN D = 1 'move left to right
+  \> 90 IF C$ = "3" THEN END 'quit
+  \> 100 X = X + D
+  \> 110 IF X > 23 THEN X = 0
+  \> 120 IF X < 0 THEN X = 23
+  \> 130 GOTO 30

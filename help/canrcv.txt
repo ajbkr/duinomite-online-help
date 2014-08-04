@@ -1,0 +1,41 @@
+NAME
+  CANRCV -- the CANRCV command
+
+SYNOPSIS
+  CANRCV id, type, len, data(), ok
+
+DESCRIPTION
+  The CANRCV checks if a CAN message was received
+  and is stored in the internal reception queue.
+
+  Argument 'id' passes the message identifier and
+  'type' the identifier type. A value of 0 means
+  that it is a 11-bit STD identifier and a value
+  of 1 means that it is a 29-bit EXT identifier. 
+
+  The number of data bytes in the messages is
+  passed by argument 'len'. 
+
+  The actual message data is passed as a
+  1-dimensional array, 'data'.
+
+  Pass in a variable for argument 'ok' to
+  determine if a messages was received. In this
+  case 'ok' holds the value 1. If it holds the
+  value 0 then either there was no message present
+  in the reception queue or the connection with
+  the CAN bus has not yet been opened (see command
+  CANOPEN).
+
+EXAMPLE
+  100 DIM rxId : DIM rxType : DIM rxLen
+  105 DIM rxData(8) : DIM rxOk
+  110 CANOPEN 500000
+  120 DO
+  130 CANRCV rxId,rxType,rxLen,rxData(0),rxOk
+  140 IF rxOk = 1 THEN
+  150 PRINT "CAN message received"
+  160 EXIT
+  170 ENDIF
+  180 LOOP
+  190 CANCLOSE

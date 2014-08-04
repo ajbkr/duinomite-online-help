@@ -1,0 +1,30 @@
+NAME
+  MERGE -- the MERGE command
+
+DESCRIPTION
+  The MERGE file$ command adds program lines from
+  'file$' to the program in memory. Unlike LOAD,
+  it does not clear the program currently in
+  memory.
+
+  Note that the line numbers of the merged program
+  lines will replace those of the already loaded
+  program if they conflict.
+
+EXAMPLE
+  \> LIST
+  10 REM Test program 1
+  20 FOR I = 1 TO 20
+  30 PRINT I
+  40 NEXT I
+  \> MERGE "TEST2.BAS"
+  \> LIST
+  10 REM Test program 2
+  20 FOR I = 1 TO 20
+  30 PRINT I
+  40 NEXT I
+  50 GOTO 20
+
+  TEST2.BAS contained just a new line 10 which has
+  now overwritten the original test program's
+  existing line 10 and a new line 50.

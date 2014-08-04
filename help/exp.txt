@@ -1,0 +1,16 @@
+NAME
+  EXP -- the EXP function
+
+DESCRIPTION
+  The EXP(number) function will return the
+  exponential value of 'number'. That is, return
+  e(the base of natural logarithm) to the power of
+  'number'.
+
+EXAMPLE
+  \> 10 X = 5 
+  \> 20 PRINT EXP(X-1)
+  \> RUN 
+  54.5981
+
+  Prints the value of e to the 4th power.

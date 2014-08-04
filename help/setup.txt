@@ -1,0 +1,86 @@
+NAME
+  SETUP -- setup
+
+DESCRIPTION
+  Setup will set power on defaults for DuinoMite
+  Boards
+
+  DuinoMite Setup Menu - V1.5  Dec 20 2011
+  -----------------------------------------
+  Hardware Platform - DuinoMite
+  V) Video Mode     - PAL
+  R) RTC On Boot    - Off
+  D) Date Format    - DD/MM/YY
+  T) Show Time Date - Disabled
+  N) Screen Saver   - Disabled
+  S) SD Card        - Enabled
+  U) Usb Console    - Enabled
+  C) Serial Console - Disabled
+  B) Baud Rate      - 19200
+  M) Custom Video Mode
+  P) Print Custom Video Mode
+  -----------------------------------------
+  Q) Quit Dont Save Settings
+  X) Exit Save Settings
+
+  Video Mode
+  PAL
+  Custom   - Use with M command to set values
+  Disabled - Completely Disables ALL Video
+  NTSC
+  NTSC-480 (wide screen NTSC)
+
+  RTC On Boot
+  Will read RTC off I2C port and set MMBasic Time
+  and Date
+
+  Date Format
+  Switches between DD/MM/YY and MM/DD/YY
+
+  Show Time Date
+  Switches between Enabled and Disabled
+
+  Screen Saver
+  Switches between Disabled and 5 - 60 minutes in
+  5 minute increments
+
+  SD Card
+  Enable or Disable micro SD Card
+  Will default to internal A: flash drive if
+  disabled
+
+  Usb Console
+  Enable or Disable USB completely
+
+  Serial Console
+  Enable Console on serial port
+  COM1: 19200 Max Baud on pins 15-rx 16-tx
+
+  COM2: 19200 Max Baud on pins 19-rx 20-tx
+
+    Will have to disable Video on DuinoMite to use
+    COM2:
+
+  COM3: 115200 Max Baud UART2 on UEXT
+
+  COM4: 115200 Max Baud UART5 on DB-9 DuinoMite
+  Mega
+
+  Custom Video Mode (Advanced Setting)
+  C_VRES
+  C_HRES
+  C_LINE_N
+  C_LINE_T
+  C_VSYNC_N
+  C_PIX_T
+  C_HSYNC_T
+  C_BLANKPAD
+
+  Print Custom Video Mode
+  Shows Custom Video Settings
+
+  Quit Without Saving
+
+  Exit Save Changes
+  Saves Settings to Flash. Do a reboot after
+  saving settings!

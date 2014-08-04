@@ -1,0 +1,13 @@
+NAME
+  END -- the END command
+
+DESCRIPTION
+  The END command will end the running program and
+  return to the command prompt.
+
+EXAMPLE
+  \> 10 PRINT "Hello!"
+  \> 20 END
+  \> 30 PRINT "Bye Bye!"
+  \> RUN
+   Hello!

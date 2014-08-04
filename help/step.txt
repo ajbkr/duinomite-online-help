@@ -1,0 +1,35 @@
+NAME
+  FOR -- the FOR command
+
+DESCRIPTION
+  The FOR counter = start TO finish [STEP
+  increment] command will iniate a FOR-Next loop
+  with the 'counter' initially set to 'start'
+  and incrementing in 'increment' steps (default
+  is 1) until 'counter' equals 'finish'. The
+  'increment' must be an integer, but it may be a
+  negative integer.
+
+  The NEXT Command
+
+  The NEXT [counter_variable][,counter-variable]
+  ,etc command comes at the end of the
+  FOR ... NEXT loop. The 'counter-variable'
+  specifies exactly which loop is being operated
+  on. If no 'counter-variable' is specified the
+  NEXT will default to the innermost loop. It is
+  also possible to specify multiple
+  counter-variables as in NEXT x,y,z 
+
+EXAMPLE
+  \> 10 FOR I = 1 TO 3
+  \> 20 PRINT I;
+  \> 30 NEXT
+  \> RUN
+  1 2 3
+
+  \> 10 FOR I = 1 TO 3 STEP 2
+  \> 20 PRINT I;
+  \> 30 NEXT
+  \> RUN
+  1 3

@@ -1,0 +1,13 @@
+NAME
+  UCASE -- the UCASE function
+
+DESCRIPTION
+  The UCASE$(string$) function returns string$
+  converted to uppercase characters.
+
+SEE ALSO
+  LCASE.
+
+EXAMPLE
+  \>PRINT UCASE$("qWeRTyUIop")
+  \>QWERTYUIOP

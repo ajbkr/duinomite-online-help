@@ -1,0 +1,27 @@
+NAME
+  DATE -- the DATE function
+
+DESCRIPTION
+  The DATE$ function returns the current date
+  based on MMBasic's internal clock as a string in
+  the form "DD:MM:YY".
+
+  In order to set the DATE and TIME the following
+  commands are used. 
+
+  DATE$="DD-MM-YY"
+  DATE$="DD/MM/YY"
+
+  On power up the date will to 00-00-2000.
+
+  TIME$="HH-MM-SS"
+
+  The internal clock/calendar will keep track of
+  the time and date including leap years.  The
+  time is set to midnight on power up. To set the
+  time use the command TIME$.
+
+EXAMPLE
+  \> DATE$="29-01-12"
+  \> PRINT DATE$
+  29-01-2012

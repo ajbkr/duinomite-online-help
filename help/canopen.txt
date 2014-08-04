@@ -1,0 +1,26 @@
+NAME
+  CANOPEN, CANCLOSE -- the CANOPEN and CANCLOSE
+                       commands
+
+SYNOPSIS
+  CANOPEN speed
+  CANCLOSE
+	
+DESCRIPTION
+  The CANOPEN command configures the CAN
+  controller for the specified communication speed
+  and synchronizes to the CAN bus. The message
+  reception acceptance filter is configured to
+  receive all valid CAN message identifiers, both
+  11-bit STD (0..7FFh) and 29-bit EXT
+  (0..1FFFFFFF). The communication speed should be
+  in the range 10 kbps to 1 Mbps.
+	
+  The CANCLOSE command closes the connection with
+  the CAN bus by placing the CAN controller back
+  into its configuration mode.
+	
+EXAMPLES
+  \> CANOPEN 500000
+
+  \> CANCLOSE

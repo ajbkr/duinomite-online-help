@@ -1,0 +1,12 @@
+NAME
+  NAME -- the NAME command
+
+DESCRIPTION
+  The NAME old$ AS new$ command will rename a file
+  or a directory on the SD card from old$ to new$
+
+SEE ALSO
+  DRIVE, FILES, KILL, LOAD, RUN, SAVE.
+
+EXAMPLE
+  NAME "OUT1.TXT" AS "OUT2.TXT"

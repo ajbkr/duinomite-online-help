@@ -1,0 +1,29 @@
+NAME
+  RMDIR -- the RMDIR command
+
+DESCRIPTION
+  The RMDIR dir$ command will remove, or delete,
+  the directory dir$ on the default drive (A: is
+  the internal FLASH drive and B: is the micro SD
+  card if present).
+
+  Note: You cannot remove a directory which
+  contains a file(s). You must first delete the
+  file(s) from the directory.
+
+SEE ALSO
+  CHDIR, CWD, DRIVE, FILES, MKDIR, NAME.
+
+EXAMPLE
+  \> FILES
+  Directory: \
+  HELP                 <DIR>
+  TEST                 <DIR>
+  MORTGAGE.BAS          1381
+  TEST.BAS               133
+  \> RMDIR "TEST"
+  \> FILES
+  Directory: \
+  HELP                 <DIR>
+  MORTGAGE.BAS          1381
+  TEST.BAS               133

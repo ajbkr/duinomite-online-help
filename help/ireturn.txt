@@ -1,0 +1,16 @@
+NAME
+  IRETURN -- the IRETURN command
+
+DESCRIPTION
+  The IRETURN command will return from an
+  interrupt. The next statement to be executed
+  will be the one that was about to be executed
+  when the interrupt was triggered.
+
+EXAMPLE
+  \> 10 SETPIN 1,6,40 'interrupt pin 1 on lo->hi,
+   ISR line 40
+  \> 20 PRINT c
+  \> 30 GOTO 20
+  \> 40 c = c + 1
+  \> 50 IRETURN

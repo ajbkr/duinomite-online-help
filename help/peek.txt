@@ -1,0 +1,21 @@
+NAME
+  PEEK -- the PEEK function
+
+DESCRIPTION
+  The PEEK(hiword,loword) function will return a
+  byte within the PIC32 virtual memory space.
+  'hiword' is the top 16 bits of the address and
+  'loword' is the bottom 16 bits.
+
+SEE ALSO
+  POKE.
+
+EXAMPLE
+  \> 10 FOR X = &HD250 to &H1378F
+  \> 20 PRINT PEEK(&HA000,X)
+  \> 30 NEXT X 
+
+  Dumps video memory.
+
+  See the POKE command for notes and warnings
+  related to memory access.

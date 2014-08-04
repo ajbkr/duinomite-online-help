@@ -1,0 +1,10 @@
+NAME
+  TRON -- the TRON command
+
+DESCRIPTION
+  The TRON turns on the trace facitlity. This
+  facility prints each line number in square
+  brackets as the program is executed. This is
+  useful in debugging programs.
+
+  The TROFF command turns off the trace facility.

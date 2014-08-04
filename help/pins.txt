@@ -1,0 +1,35 @@
+NAME
+  PIN -- the PIN function
+
+DESCRIPTION
+  The PIN(pin) function returns the value on the
+  external I/O 'pin'. Zero means digital low, 1
+  means digital high and for analog inputs it will
+  return the measured voltage as a floating point
+  number.
+
+  Frequency inputs will return the frequency in Hz
+  (maximum 200KHz) A period input will return the
+  period in milliseconds while a count input will
+  return the count since reset (counting is done
+  on the rising edge). The count input can be
+  reset to zero by resetting the pin to counting
+  input (even if it is already so configured).
+
+  'pin' zero is a special case which will always
+  return the state of the bootload push button in
+  the PC board (non zero means that the button is
+  down).
+
+SEE ALSO
+  SETPIN, PIN() = commands. 
+
+EXAMPLE
+  \>10 SETPIN 1,8
+  \>20 PIN(1) = PIN(0)
+  \>30 GOTO 20
+
+  The above program will cause a LED connected via
+  a suitable current-limiting resistor to GPIO pin
+  1 and GND to light ON when the User button is
+  pressed.

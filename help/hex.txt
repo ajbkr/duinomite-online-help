@@ -1,0 +1,29 @@
+NAME
+  HEX -- the HEX function
+
+DESCRIPTION
+  The HEX$(nbr) function will return a string for
+  the hexadecimal (base 16) value for 'nbr'.
+
+  HEX$ converts decimal values within the range of
+  0 to 1677100 and produces string expression
+  within the range of 0 to FFFFFFFF.
+
+  Hexadecimal numbers are numbers to the base 16,
+  rather than base 10 (decimal numbers). 'nbr' is
+  rounded to an integer before HEX$(x) is
+  evaluated. 
+
+  If 'nbr' is negative, 2's (binary) complement
+  form is used i.e. -1 is FFFFFFFF
+
+SEE ALSO
+  OCT$()
+
+EXAMPLE
+  \> 10 CLS: INPUT "INPUT DECIMAL NUMBER";X
+  \> 20 A$=HEX$(X)
+  \> 30 PRINT X " DECIMAL IS "A$" HEXADECIMAL"
+  \> RUN
+  INPUT DECIMAL NUMBER? 32
+  32 DECIMAL IS 20 HEXADECIMAL

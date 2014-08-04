@@ -1,0 +1,58 @@
+NAME
+  FORMAT -- the FORMAT function
+
+DESCRIPTION
+  The FORMAT$(nbr[,fmt$]) function will return a
+  string 'nbr' formatted according to the
+  specifications in the string 'fmt$'.
+
+  The format specification starts with a %
+  character and ends with a letter. Anything
+  outside of this construct is copied to the
+  output as is.
+
+  The structure of a format specification is:
+
+    -       Left jusitify the value within a given
+            field width
+
+    0       Use 0 for the pad character instead of
+            a space
+
+    +       Forces the + sign to be shown for
+            positive numbers
+
+    space   Causes a positive value to display a
+            space for the sign. Negative values
+            still show the - sign.
+
+    'width' is the minimum number of characters to
+    output, less than this number will be padded,
+    more than this width will be expanded.
+
+    'type' can be of:
+
+      g     Automatically format the number for
+            the best presentation
+
+      f     Format the number with the decimal
+            point and following digits
+
+      e     Format the number in exponential
+            format
+
+      If uppercase G of F is used the exponential
+      output will use an upper case E. If the
+      format specification is not specified "%g"
+      is assumed.
+
+EXAMPLES
+  format$(45) will return 45 
+  format$(45,   "%g") will return 45 
+  format$(24.1, "%g") will return 24.1 
+  format$(24.1, "%f") will return 24.100000 
+  format$(24.1, "%e") will return 2.410000e+01 
+  format$(24.1, "%09.3f") will return 00024.100 
+  format$(24.1, "%+.3f") will return +24.100 
+  format$(24.1, "**%-9.3f**") will return
+   **24.100   **

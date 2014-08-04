@@ -1,0 +1,24 @@
+NAME
+  VAL -- the VAL function
+
+DESCRIPTION
+  The VAL(string$) returns the numerical value of
+  the 'string$'. If 'string$' is an invalid number
+  the function will return zero. This function
+  will recognise the &H prefix for a hexadecimal
+  number, &O for octal and &B for binary.
+
+  If the first character of x$ is not numeric,
+  VAL(x$) will return zero.  
+
+  The STR$ function (for numeric to string
+  conversion) is the complement to the VAL(x$)
+  function.
+
+EXAMPLE
+  \>10 INPUT "ENTER ZIP:"; ZIP$
+  \>20 IF VAL(ZIP$) < 1000 OR VAL(ZIP$) > 9000
+   THEN PRINT "INVALID ZIP"
+  \>30 IF VAL(ZIP$) = 4000 THEN PRINT "THIS IS THE
+   ZIP CODE FOR THE CITY OF PLOVDIV WHERE
+   DUINOMITE WAS BORN :)"

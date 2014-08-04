@@ -1,0 +1,23 @@
+NAME
+  LOADBMP -- the LOADBMP command
+
+SYNOPSIS
+  LOADBMP "FILE.BMP",x,y,mode
+
+DESCRIPTION
+  The LOADBMP command loads and show bmp. file on
+  screen. Defaults to loading BMP with top left
+  corner at 0,0 unless x and y are specified.
+  Optional mode allows BMP to be inverted
+  (white=black etc) if mode < 128.
+	
+EXAMPLE
+  \> 10 CLS
+  \> 20 ?
+  \> 30 ? "This is just for showing how LOADBMP
+   works"
+  \> 40 SAVEBMP "BMPTEST.BMP"
+  \> 50 CLS
+  \> 60 LOADBMP "BMPTEST.BMP",50,50,127  
+  \> 70 REM Shows inverted screenshot 50px in and
+   50px down.

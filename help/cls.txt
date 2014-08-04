@@ -1,0 +1,7 @@
+NAME
+  CLS -- the CLS command
+
+DESCRIPTION
+  The CLS command will clear the screen and place
+  the cursor in the top left hand corner of the
+  screen.

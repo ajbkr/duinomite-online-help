@@ -1,0 +1,32 @@
+NAME
+  PIXEL -- the PIXEL command
+
+DESCRIPTION
+  The PIXEL(x,y) = value command will set a pixel
+  on a VGA or composite screen to off (if the
+  value is zero) or on (if the value is non zero).
+
+  See the function PIXEL(x,y) for obtaining the
+  value of a pixel.
+
+  Coordinates are specified in pixels. 'x' is a
+  pixel on the horizontal axis and 'y' is a pixel
+  on the vertical axis.
+
+  The x and y axis start at the top left of the
+  screen which is defined as location 0,0. The
+  location of the bottom right of the screen is
+  defined by the read-only variables MM.HRES (the
+  horizontal x axis) and MM.VRES (the vertical y
+  axis). These variables change depending on the
+  selected video mode (VGA or composite). For a
+  VGA screen, x=480 and y=432.
+
+EXAMPLE
+  \> 10 FOR x = 1 TO 80
+  \> 20 FOR y = 1 TO 40
+  \> 30 PIXEL(x,y)=1
+  \> 40 NEXT x,y
+
+  This program draws a solid rectangle at the top
+  left of the screen.

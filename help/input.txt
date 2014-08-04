@@ -1,0 +1,42 @@
+NAME
+  INPUT -- the INPUT command
+
+SYNOPSIS
+  INPUT[prompt string$] variable [,variable...]
+
+DESCRIPTION
+  This command allows input from the keyboard to a
+  list of variables. The input command will prompt
+  with a question mark(?).
+
+  The input must contain commas to separate the
+  data for each variable if there is more than
+  one. For Example, if the command is:
+
+    INPUT a,b,c 
+
+  and 23, 87, 66 is typed on the keyboard, then
+  a=23, b=87 and c=66.
+
+  If the optional 'prompt string$' is specified
+  it will be printed before the question mark
+  prompt.
+
+  If the 'prompt string$' is terminated with a
+  comma (,) rather than a semicolon (;) the
+  question mark will be supressed.
+
+  INPUT#nbr, variable [,variable...]
+
+  This command is the same as the previous one
+  except that the input is read from a file
+  previously opened for INPUT as 'nbr'.
+
+SEE ALSO
+  OPEN, LINE INPUT.
+
+EXAMPLE
+  10 OPEN "OUT1.TXT" FOR input AS #1
+  20 INPUT#1, A$
+  30 PRINT "Text: " A$
+  40 CLOSE#1

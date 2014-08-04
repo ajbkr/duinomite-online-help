@@ -1,0 +1,15 @@
+NAME
+  ERROR -- the ERROR command
+
+DESCRIPTION
+  The ERROR [error_msg$] will force an error and
+  terminate the program. This is normally used in
+  debugging or to trap events thats should not
+  occur.
+
+EXAMPLE
+  \> 10 PRINT "Bye!"
+  \> 20 ERROR "Oops!"
+  \> RUN
+  Bye!
+  Error line 20: Oops

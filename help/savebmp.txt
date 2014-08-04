@@ -1,0 +1,20 @@
+NAME
+  SAVEBMP -- the SAVEBMP command
+
+DESCRIPTION
+  The SAVEBMP file$ command saves the current VGA
+  or composite screen as a BMP file in the current
+  working directory on the default drive. (The
+  internal FLASH is drive A:, the micro SD card,
+  if installed, is drive B:).
+
+  If an extension is not specified, ".BMP" will be
+  appended to the filename automatically.
+
+EXAMPLE
+  \> SAVEBMP "IMAGE.BMP"
+
+  Note that Windows 7 Paint has trouble displaying
+  the image. This appears to be a bug in Paint as
+  all the software tested (including windows XP
+  Paint) can display the image without fault.

@@ -1,0 +1,27 @@
+NAME
+  ASC -- the ASC function
+
+DESCRIPTION
+  The ASC(string$) fuction will return the ASCII
+  code for the first letter in the argument
+  'string$'.
+
+  If 'string$' is null, 0 is returned.
+
+  If 'string$' begins with an uppercase letter,
+  the value returned will be within the range of
+  65 to 90.
+
+  If 'string$' begins with a lowercase letter,
+  the range is 97 to 122.
+
+  Numbers 0 to 9 return 48 to 57, sequentially.
+
+EXAMPLE
+  \> PRINT ASC("ABC")
+  65
+
+SEE ALSO
+  See the CHR$ function for ASCII-to-string conversion.
+
+  See the ASCII(ascii) file for ASCII codes.

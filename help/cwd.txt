@@ -1,0 +1,14 @@
+NAME
+  CWD -- the CWD function
+
+DESCRIPTION
+  The CWD$ function will return the current
+  working directory on the default drive (internal
+  flash a: or micro SD card b:) as a string.
+
+SEE ALSO
+  CHDIR, DRIVE, FILES, MKDIR, NAME, RMDIR
+
+EXAMPLE
+  \> PRINT "CURRENT WORKING DIRECTORY IS: ";CWD$
+  CURRENT WORKING DIRECTORY IS: \

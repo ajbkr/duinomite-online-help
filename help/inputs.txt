@@ -1,0 +1,25 @@
+NAME
+  INPUT$ -- the INPUT$ function
+
+DESCRIPTION
+  The INPUT$(nbr, [#]fnbr) function will return a
+  string composed of 'nbr' characters read from a
+  file previously opened for INPUT with the file
+  number 'fnbr'. This function will read all
+  characters including carriage returns and new
+  lines without translation. The # is optional.
+
+  When reading from a serial communications port
+  this will return as many characters as are
+  waiting in the receive buffer up to 'nbr'. If
+  there are no characters waiting it will return
+  immediately with an empty string. 
+
+SEE ALSO
+  OPEN.
+
+EXAMPLE
+  10 OPEN "OUT1.TXT" FOR input AS #1
+  20 A4 = INPUT$(80, #1)
+  30 PRINT "Text: " A$
+  40 CLOSE#1

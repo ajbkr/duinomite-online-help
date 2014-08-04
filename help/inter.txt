@@ -1,0 +1,51 @@
+NAME
+  inter -- interrupts
+
+DESCRIPTION
+  Any external I/O pin can be configured to
+  generate an  interrupt using the SETPIN command
+  with up to 21 interrupts (including the tick
+  interrupt) active at any one time.  
+
+  Interrupts can be set up to occur on a rising or
+  falling digital input signal and will cause an
+  immediate branch to a specified line number
+  (similar to a GOSUB). The target line number can
+  be the same or different for each interrupt.
+  Return from an interrupt is via the IRETURN
+  statement. All statements (including
+  GOSUB/RETURN) can be used within an interrupt. 
+
+  If two or more interrupts occur at the same time
+  they will be processed in order of pin numbers
+  (ie, an interrupt on pin 1 will have the highest
+  priority). During processing of an interrupt all
+  other interrupts are disabled until the
+  interrupt routine returns with an IRETURN.
+  During an interrupt (and at all times) the value
+  of the interrupt pin can be accessed using the
+  PIN() function.
+
+  A periodic interrupt (or regular "tick") with a
+  period specified in milliseconds can be setup
+  using the SETTICK statement. This interrupt has
+  the lowest priority. 
+
+  Interrupts can occur at any time but they are
+  disabled during INPUT statements.  If you need
+  to get input from the keyboard while still
+  accepting interrupts you should use the INKEY$
+  function. When using interrupts the main program
+  is completely unaffected by the interrupt
+  activity unless a variable used by the main
+  program is changed during the interrupt. 
+
+  For most programs MMBasic will respond to an
+  interrupt in <100uS. 
+
+  To prevent slowing the main program too much an
+  interrupt should be short and execute the
+  IRETURN statement as soon as possible. Also
+  remember to disable an interrupt when you no
+  longer need it. Background interrupts can cause
+  strange and non intuitive bugs.
